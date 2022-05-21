@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+    var names = ["Primary","Secondary","Success","Danger","Warning","Info","Light","Dark","Link"];
+
+    var colors = ["green","red","yellow","pink","green","red","yellow","pink","white"];
+
+    var buttonsData = [
+        {name:"Primary",bgColor:"green",color:"white"},
+        {name:"Secondary",bgColor:"red",color:"white"},
+        {name:"Success",bgColor:"Yellow",color:"white"},
+        {name:"Danger",bgColor:"pink",color:"white"},
+        {name:"Warning",bgColor:"aqua",color:"black"},
+        {name:"Info",bgColor:"grey",color:"white"},
+        {name:"Light",bgColor:"blue",color:"white"},
+        {name:"Dark",bgColor:"white",color:"black"},
+        {name:"Link",bgColor:"teal",color:"white"},
+    ]
+
+    buttonsData.forEach(function(elem){
+        var btn = document.createElement("button");
+        btn.innerText = elem.name;
+        btn.style.backgroundColor = elem.bgColor;
+        btn.style.color = elem.color
+        document.querySelector("body").append(btn);
+    })
+</script>

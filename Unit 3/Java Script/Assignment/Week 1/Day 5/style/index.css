@@ -1,0 +1,27 @@
+#form{
+    width: 25%;
+    margin: auto;
+    text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 20px;
+    padding: 20px 0px;
+}
+
+#form input,select{
+    width: 80%;
+    height: 40px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid gray;
+}
+
+#form input:nth-child(7){
+    background-color: teal;
+    color: white;
+    font-size: 16px;
+    width: 50%;
+}
+
+#form > h1{
+    margin-bottom: 20px;
+}

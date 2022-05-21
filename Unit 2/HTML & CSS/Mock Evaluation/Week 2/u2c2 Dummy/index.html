@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700;900&family=Roboto:ital,wght@0,300;0,400;0,900;1,400&display=swap"
+    rel="stylesheet">
+  <style>
+    * {
+      font-family: 'Poppins', sans-serif;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    #header>h1 {
+      text-align: center;
+      font-weight: 900;
+      font-size: 40px;
+    }
+
+    #blogs-container{
+      width: 90%;
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      grid-template-rows: auto;
+      gap: 30px;
+      margin: auto;
+      margin-bottom: 30px;
+    }
+    
+    #blogs-container>div>img{
+      width: 100%;
+    }
+
+    #blogs-container h4{
+      margin-top: -10px;
+    }
+    p{
+      color: grey;
+    }
+    
+    
+    #catagory-container{
+      width: 90%;
+      display: grid;
+      grid-template-columns: repeat(4,1fr);;
+      grid-template-rows: repeat(2,auto);
+      gap: 10px;
+      margin: auto;
+    }
+    #catagory-container>div{
+      box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    }
+    
+    #catagory-container>div>img{
+      width: 100%;
+      height: 60%;
+      margin: auto;
+    }
+    
+    #catagory-container img+div{
+      width: 90%;
+      text-align: center;
+      margin: auto;
+      margin-top: -28px;
+    }
+    
+    
+    /* Medium screens */
+    @media all and (min-width:451px) and (max-width:750px) {
+      #header>h1 {
+      font-size: 32px;
+    }
+      #blogs-container{
+        grid-template-columns: repeat(2,1fr);
+        grid-template-rows: repeat(2,auto);
+      }
+
+      #catagory-container{
+      grid-template-columns: repeat(3,1fr);;
+      grid-template-rows: repeat(3,auto);
+    }
+      
+    }
+    
+    
+    /* Small Screens */
+    @media all and (min-width:100px) and (max-width:450px) {
+      #header>h1 {
+      font-size: 25px;
+    }
+      #blogs-container{
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(3,auto);
+      }
+
+      #catagory-container{
+      grid-template-columns: repeat(2,1fr);
+      grid-template-rows: repeat(4,auto);
+    }
+    }
+    </style>
+</head>
+
+<body>
+  <div id="header">
+    <h1>Our Blog Posts</h1>
+  </div>
+  <div id="blogs-container">
+    <!-- All the Blogs will be here  -->
+    <div>
+      <!-- the images, date and the blog heading will be here  -->
+      <img src="https://www.photolisticlife.com/wp-content/uploads/2016/08/L1002649.jpg" alt="">
+      <div>
+        <p>29 February 2020</p>
+        <h4>Architectural Art Modern</h4>
+      </div>
+    </div>
+    <div>
+      <!-- the images, date and the blog heading will be here  -->
+      <img src="https://ctsp.co.za/wp-content/uploads/2016/11/I-travel-the-world-to-find-photograph-the-most-amazing-Architecture-583405b71f15e__880.jpg" alt="">
+      <div>
+        <p>29 February 2020</p>
+        <h4>Architectural Art Modern</h4>
+      </div>
+    </div>
+    <div>
+      <!-- the images, date and the blog heading will be here  -->
+      <img src="https://i1.wp.com/befrontmag.com/wp-content/uploads/2017/06/befront_archiphoto_08.jpg" alt="">
+      <div>
+        <p>29 February 2020</p>
+        <h4>Architectural Art Modern</h4>
+      </div>
+    </div>
+  </div>
+  <div id="catagory-container">
+    <!-- All the boxes for blog catagory goes here  -->
+    <div>
+      <!-- The image, h3 tag, p tag etc will be here  -->
+      <img src="https://assetscdn1.paytm.com/images/catalog/view_item/733295/1626259710574.png" alt="">
+      <div>
+        <h4>Creative Design</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias est</p>
+      </div>
+    </div>
+    <div>
+      <!-- The image, h3 tag, p tag etc will be here  -->
+      <img src="https://assetscdn1.paytm.com/images/catalog/view_item/733295/1626259710574.png" alt="">
+      <div>
+        <h4>Creative Design</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias est</p>
+      </div>
+    </div>
+    <div>
+      <!-- The image, h3 tag, p tag etc will be here  -->
+      <img src="https://assetscdn1.paytm.com/images/catalog/view_item/733295/1626259710574.png" alt="">
+      <div>
+        <h4>Creative Design</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias est</p>
+      </div>
+    </div>
+    <div>
+      <!-- The image, h3 tag, p tag etc will be here  -->
+      <img src="https://assetscdn1.paytm.com/images/catalog/view_item/733295/1626259710574.png" alt="">
+      <div>
+        <h4>Creative Design</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias est</p>
+      </div>
+    </div>
+    <div>
+      <!-- The image, h3 tag, p tag etc will be here  -->
+      <img src="https://assetscdn1.paytm.com/images/catalog/view_item/733295/1626259710574.png" alt="">
+      <div>
+        <h4>Creative Design</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias est</p>
+      </div>
+    </div>
+    <div>
+      <!-- The image, h3 tag, p tag etc will be here  -->
+      <img src="https://assetscdn1.paytm.com/images/catalog/view_item/733295/1626259710574.png" alt="">
+      <div>
+        <h4>Creative Design</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias est</p>
+      </div>
+    </div>
+    <div>
+      <!-- The image, h3 tag, p tag etc will be here  -->
+      <img src="https://assetscdn1.paytm.com/images/catalog/view_item/733295/1626259710574.png" alt="">
+      <div>
+        <h4>Creative Design</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias est</p>
+      </div>
+    </div>
+    <div>
+      <!-- The image, h3 tag, p tag etc will be here  -->
+      <img src="https://assetscdn1.paytm.com/images/catalog/view_item/733295/1626259710574.png" alt="">
+      <div>
+        <h4>Creative Design</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias est</p>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

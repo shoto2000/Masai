@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <style>
+        /* child selector
+        syntax - selector 1> selector 2> selector 3> selector 4........ */
+        div p{
+            /* it will select all p which are children of div */
+            font-size: 69px;
+        }
+        #container > p{
+            background-color: yellow;
+        }
+        #box > p{
+            background-color: orange ;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <p>I am Paragraph 1</p>
+        <div id="box">
+            <p>I am Paragraph 2</p>
+        </div>
+    </div>
+</body>
+</html>

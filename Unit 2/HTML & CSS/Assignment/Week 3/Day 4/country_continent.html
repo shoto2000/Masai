@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <select id="continent_select">
+        <!-- <option> Select Country </option>	 -->
+        <option value="India"> India </option>
+        <option value="United States of America"> United States of America </option>
+        <option value="China"> China </option>
+        <option value="Nepal"> Nepal </option>
+        <option value="Australia"> Australia </option>
+        <option value="France"> France </option>
+        <option value="Germany"> Germany </option>
+        <option value="South Africa"> South Africa </option>
+        <option value="Nigeria"> Nigeria </option>
+        <option value="Mexico"> Mexico </option>
+        <option value="Argentina"> Argentina </option>
+        <option value="Brazil"> Brazil </option>
+        <option value="Canada"> Canada </option>
+        <option value="Singapore"> Singapore </option>
+        <option value="Sweden"> Sweden </option>
+    </select>
+    <button id="btn">Find Continent</button>
+</body>
+
+</html>
+
+<script>
+    document.querySelector("#btn").addEventListener("click", myButton);
+
+    
+    function myButton() {
+        var name = document.querySelector("#continent_select").value;
+
+        // if (name == "India" || name == "China" || name == "Nepal" || name == "Singapore") {
+        //     alert("The continent is Asia");
+        // }
+        // else if(name == "United States of America" || name == "Argentina" || name == "Brazil"){
+        //     alert("The continent is South America")
+        // }
+        // else if(name == "Canada" || name == "Mexico"){
+        //     alert("The continent is North America")
+        // }
+        // else if(name == "Australia"){
+        //     alert("The continent is Australia");
+        // }
+        // else if(name == "France" || name == "Germany" || name == "Sweden"){
+        //     alert("The continent is Europe");
+        // }
+        // else if(name == "South Africa" || name == "Nigeria"){
+        //     alert("The continent is Africa");
+        // }
+
+        switch(name){
+            case "India":
+            case "China":
+            case "Nepal":
+            case "Singapore":
+                alert("The continent is Asia");
+                break;
+            case "United States of America":
+            case "Argentina":
+            case "Brazil":            
+                alert("The continent is South America");
+                break;
+            case "Canada":
+            case "Mexico":
+                alert("The continent is North America");
+                break;
+            case "France":
+            case "Germany":
+            case "Sweden":
+                alert("The continent is Europe");
+                break;
+            case "South Africa":
+            case "Nigeria":
+                alert("The continent is Africa");
+                break;
+        }
+    }
+</script>

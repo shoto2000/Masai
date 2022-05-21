@@ -1,0 +1,24 @@
+#signup{
+    width: 30%;
+    margin: auto;
+    display: block;
+    text-align: center;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    padding: 50px 0px;
+}
+
+#signup > h1{
+    margin-bottom: 300px;
+}
+
+#form{
+    width: 100%;
+}
+
+#form > input{
+    width: 80%;
+    margin: auto;
+    height: 40px;
+    margin-bottom: 20px;
+    border: 0px;
+}

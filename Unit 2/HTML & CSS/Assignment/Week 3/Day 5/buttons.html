@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button{
+            margin-right: 5px;
+            border: 0px;
+            font-size: 30px;
+            border-radius: 7px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+    var names = ["Primary","Secondary","Success","Danger","Warning","Info","Light","Dark","Link"];
+
+    var colors = ["green","red","yellow","pink","green","red","yellow","pink","white"];
+
+    var buttonsData = [
+        {name:"Primary",bgColor:"rgb(0, 123, 255)",color:"white"},
+        {name:"Secondary",bgColor:"grey",color:"white"},
+        {name:"Success",bgColor:"rgb(40, 174, 40)",color:"white"},
+        {name:"Danger",bgColor:"rgb(255, 0, 81)",color:"white"},
+        {name:"Warning",bgColor:"rgb(255, 191, 0)",color:"black"},
+        {name:"Info",bgColor:"teal",color:"white"},
+        {name:"Light",color:"black"},
+        {name:"Dark",bgColor:"rgb(34, 33, 33)",color:"white"},
+        {name:"Link",bgColor:"white",color:"rgb(69, 167, 248)"},
+    ]
+
+    buttonsData.forEach(function(elem){
+        var btn = document.createElement("button");
+        btn.innerText = elem.name;
+        btn.style.backgroundColor = elem.bgColor;
+        btn.style.color = elem.color;
+        document.querySelector("body").append(btn);
+    })
+</script>

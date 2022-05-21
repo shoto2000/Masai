@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,700;0,900;1,400&family=Roboto:ital,wght@0,300;0,400;0,900;1,400&display=swap"
+        rel="stylesheet">
+    <title>Document</title>
+    <style>
+        * {
+            font-family: 'Poppins', sans-serif;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        #container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            gap: 20px;
+            width: 80%;
+            margin: auto;
+        }
+
+        #container>div {
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            border-radius: 20px;
+        }
+
+        #container>div>div {
+            width: 90%;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        div>div>div+div {
+            width: 90%;
+        }
+
+        #container>div>div:first-child>p:first-child {
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        #container>div>div:first-child>p:last-child {
+            font-weight: bold;
+            color: goldenrod;
+            font-size: 18px;
+        }
+        div > p:only-child{
+            color: grey;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div>
+            <div>
+                <p>Cappuchino</p>
+                <p>$49</p>
+            </div>
+            <div>
+                <p>Usage of Internet is becoming more common due to rapid advance.</p>
+            </div>
+        </div>
+        <div>
+            <div>
+                <p>Americano</p>
+                <p>$49</p>
+            </div>
+            <div>
+                <p>Usage of Internet is becoming more common due to rapid advance.</p>
+            </div>
+        </div>
+        <div>
+            <div>
+                <p>Esperesso</p>
+                <p>$49</p>
+            </div>
+            <div>
+                <p>Usage of Internet is becoming more common due to rapid advance.</p>
+            </div>
+        </div>
+        <div>
+            <div>
+                <p>Macchiato</p>
+                <p>$49</p>
+            </div>
+            <div>
+                <p>Usage of Internet is becoming more common due to rapid advance.</p>
+            </div>
+        </div>
+        <div>
+            <div>
+                <p>Mocha</p>
+                <p>$49</p>
+            </div>
+            <div>
+                <p>Usage of Internet is becoming more common due to rapid advance.</p>
+            </div>
+        </div>
+        <div>
+            <div>
+                <p>Coffee Latte</p>
+                <p>$49</p>
+            </div>
+            <div>
+                <p>Usage of Internet is becoming more common due to rapid advance.</p>
+            </div>
+        </div>
+        <div>
+            <div>
+                <p>Piccolo Latte</p>
+                <p>$49</p>
+            </div>
+            <div>
+                <p>Usage of Internet is becoming more common due to rapid advance.</p>
+            </div>
+        </div>
+        <div>
+            <div>
+                <p>Ristretto</p>
+                <p>$49</p>
+            </div>
+            <div>
+                <p>Usage of Internet is becoming more common due to rapid advance.</p>
+            </div>
+        </div>
+        <div>
+            <div>
+                <p>Affogato</p>
+                <p>$49</p>
+            </div>
+            <div>
+                <p>Usage of Internet is becoming more common due to rapid advance.</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

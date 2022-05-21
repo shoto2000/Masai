@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <style>
+        div p{
+            /* select all p tag which are decendent of div */
+            background-color: red;
+        }
+        div h1{
+            /* select all h1 tag which are decendent of div */
+            background-color: yellow;
+        }
+        div h3{
+            /* select all h3 tag which are decendent of div */
+            background-color: pink;
+        }
+        #container p{
+            /* select all p tag which are decendent of container Id */
+            background-color: teal;
+        }
+        #shakil h3{
+            /* select all h3 tag which are decendent of shakil Id */
+            background-color: orange;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <p>P1</p>
+        <h1>I am heading 1</h1>
+        <h3>I am heading 3</h3>
+    </div>
+
+    <p>P2</p>
+
+    <div id="container">
+        <p>P3</p>
+        <div>
+            <div>
+                <div>
+                    <p>P4</p>
+                    <div id="shakil">
+                        <h3>h3 2</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

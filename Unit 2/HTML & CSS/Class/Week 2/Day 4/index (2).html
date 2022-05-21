@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container{
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            gap: 20px;
+            width: 80%;
+            margin: auto;
+        }
+        #container > div{
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            border-radius: 20px;
+        }
+        #container > div > div{
+            width: 90%;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+        }
+        div > div > div + div{
+            width: 90%;
+        }
+        h1{
+            font-size: 60px;
+            text-align: center;
+            color: teal;
+        }
+        @media all and (min-width:451px) and (max-width:750px){
+            #container{
+                grid-template-columns: repeat(2, 1fr);
+            }
+            h1{
+                font-size: 40px;
+                text-align: center;
+                color: teal;
+            }
+        }
+        @media all and (min-width:80px) and (max-width:450px){
+            #container{
+                grid-template-columns: repeat(1, 1fr);
+            }
+            h1{
+                font-size: 20px;
+                text-align: center;
+                color: teal;
+            }
+        }
+        </style>
+</head>
+<body>
+    <h1>Grid Coffee</h1>
+    <div id="container">
+        <div>
+            <div>
+                <p>Cappuchino</p>
+                <p>$49</p>
+            </div>
+            <div>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi iste eum sed, quae consequuntur obcaecati.</p>
+            </div>
+        </div>
+        <div>
+            <div>
+                <p>Cappuchino</p>
+                <p>$49</p>
+            </div>
+            <div>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi iste eum sed, quae consequuntur obcaecati.</p>
+            </div>
+        </div>
+        <div>
+            <div>
+                <p>Cappuchino</p>
+                <p>$49</p>
+            </div>
+            <div>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi iste eum sed, quae consequuntur obcaecati.</p>
+            </div>
+        </div>
+        <div>
+            <div>
+                <p>Cappuchino</p>
+                <p>$49</p>
+            </div>
+            <div>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi iste eum sed, quae consequuntur obcaecati.</p>
+            </div>
+        </div>
+        <div>
+            <div>
+                <p>Cappuchino</p>
+                <p>$49</p>
+            </div>
+            <div>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi iste eum sed, quae consequuntur obcaecati.</p>
+            </div>
+        </div>
+        <div>
+            <div>
+                <p>Cappuchino</p>
+                <p>$49</p>
+            </div>
+            <div>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi iste eum sed, quae consequuntur obcaecati.</p>
+            </div>
+        </div>
+        <div>
+            <div>
+                <p>Cappuchino</p>
+                <p>$49</p>
+            </div>
+            <div>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi iste eum sed, quae consequuntur obcaecati.</p>
+            </div>
+        </div>
+        <div>
+            <div>
+                <p>Cappuchino</p>
+                <p>$49</p>
+            </div>
+            <div>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi iste eum sed, quae consequuntur obcaecati.</p>
+            </div>
+        </div>
+        <div>
+            <div>
+                <p>Cappuchino</p>
+                <p>$49</p>
+            </div>
+            <div>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi iste eum sed, quae consequuntur obcaecati.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

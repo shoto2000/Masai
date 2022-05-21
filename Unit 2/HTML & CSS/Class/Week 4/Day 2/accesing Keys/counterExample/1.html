@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1></h1>
+    <button id="dec">Decrement</button>
+    <button id="inc">Increment</button>
+    <button id="reset">Reset</button>
+</body>
+
+</html>
+
+<script>
+    var count = (localStorage.getItem("count")||0);
+
+    // if(localStorage.getItem("count")==null){
+    //     count =0
+    // }
+    // else{
+    //     count = localStorage.getItem("count");
+    // }
+
+    document.querySelector("h1").innerText = count;
+
+    document.querySelector("#dec").addEventListener("click", decfun);
+    
+    document.querySelector("#reset").addEventListener("click", resetfun);
+
+    
+    function decfun() {
+        count--;
+        document.querySelector("h1").innerText = count;
+        localStorage.setItem("count",count);
+    }
+    
+    document.querySelector("#inc").addEventListener("click", incfun);
+    
+    function incfun() {
+        count++;
+        document.querySelector("h1").innerText = count;
+        localStorage.setItem("count",count);
+    }
+
+    function resetfun(){
+        count = 0;
+        document.querySelector("h1").innerText = count;
+        localStorage.setItem("count",count);
+    }
+
+    // // or ||, and && operators
+
+    // // output will be false even when one condition is false
+    // console.log(true&&true);
+    // console.log(true&&false);
+    // console.log(false&&true);
+    // console.log(false&&false);
+    
+    // console.log("-----");
+    
+    // // output will be true even when one condition is true
+    // console.log(true||true);
+    // console.log(true||false);
+    // console.log(false||true);
+    // console.log(false||false);
+    
+    // console.log("-----");
+    
+    // console.log(true||true);
+    // console.log(true||null);
+    // console.log(null||true);
+    // console.log(null||null);
+    
+    // console.log("-----");
+    
+    // console.log(localStorage.getItem("jdshfa")||true);
+    // console.log(true||localStorage.getItem("jdshfa"));
+    
+    // console.log("-----");
+
+    // console.log(false||100);
+
+
+    // var x= 0; //null,"",undefined,NaN,0 == false
+    // if(x){
+    //     console.log("Masai");
+    // }
+    // else{
+    //     console.log("Masai School")
+    // }
+    
+</script>

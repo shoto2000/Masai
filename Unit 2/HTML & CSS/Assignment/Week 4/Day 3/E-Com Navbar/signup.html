@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="common.css">
+    <link rel="stylesheet" href="signup.css">
+</head>
+
+<body>
+    <div id="navbar">
+        <div id="product">
+            <h4>Please Signup and Login first to see content</h4>
+            <!-- <div><a href="mens.html">Men</a></div>
+            <div><a href="womens.html">women</a></div> -->
+        </div>
+        <div id="cred">
+            <div><a href="signup.html">Sign up</a></div>
+            <div><a href="login.html">Login</a></div>
+        </div>
+    </div>
+
+    <div id="signup">
+        <form id="form">
+            <h1>Signup</h1>
+            <input id="email" type="email" placeholder="Enter Email">
+            <input id="number" type="number" placeholder="Enter Number">
+            <input id="password" type="password" placeholder="Enter Password">
+            <br>
+            <input type="submit">
+        </form>
+    </div>
+</body>
+
+</html>
+
+<script>
+    document.querySelector("#form").addEventListener("submit", detailSubmit);
+
+    var detailArr = JSON.parse(localStorage.getItem("detailList")) || [];
+
+    function detailSubmit() {
+        event.preventDefault();
+
+        var detailObj = {
+            pemail: form.email.value,
+            pnumber: form.number.value,
+            ppassword: form.password.value
+        }
+
+        detailArr.push(detailObj);
+        console.log(detailArr);
+        localStorage.setItem("detailList", JSON.stringify(detailArr));
+        window.location.href = "login.html"
+    }
+
+
+</script>

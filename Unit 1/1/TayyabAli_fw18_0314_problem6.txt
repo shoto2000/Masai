@@ -1,0 +1,20 @@
+// https://false-trouser-16e.notion.site/Problem-6-Join-Array-2e7c4b5d6fc049009e303f54ea9adb3a
+
+
+function join(array,char){
+  add = "";
+  for(var i=0;i<array.length;i++){
+    if(i<(array.length-1)){
+      add = add + array[i] + char;
+    }
+    else if(i==(array.length-1)){
+      add = add + array[i];
+    }
+  }
+  console.log(add);  
+}
+
+
+var array = ["hello", "world", "bye"];
+
+join(array,"*");

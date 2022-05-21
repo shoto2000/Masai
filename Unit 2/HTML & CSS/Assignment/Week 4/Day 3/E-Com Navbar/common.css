@@ -1,0 +1,30 @@
+#navbar{
+    display: flex;
+    justify-content: space-between;
+    font-size: 30px;
+    font-weight: bold;
+    background-color: black;
+    height: 70px;
+    align-items: center;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+#navbar > div:first-child{
+    display: flex;
+    width: 70%;
+    justify-content: space-around;
+    color: white;
+}
+
+#navbar > div:last-child{
+    display: flex;
+    width: 30%;
+    justify-content: space-around;
+    color: white;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}

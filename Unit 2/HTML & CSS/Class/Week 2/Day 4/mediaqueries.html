@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         body{
+            background-color: teal;
+        }
+        h1{
+            font-size: 60px;
+            color: red;
+        }
+        p{
+            font-size: 20px;
+            color: white;
+        }
+        /* medium screen */
+        @media all and (min-width: 451px) and (max-width: 750px){
+            body{
+                background-color: yellow;
+            }
+            h1{
+                font-size: 40px;
+                color: green;
+            }
+        }
+        @media all and (min-width: 80px) and (max-width: 450px){
+            body{
+                background-color: violet;
+            }
+            h1{
+                font-size: 20px;
+                color: white;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>I am Heading 1</h1>
+    <p>I am Paragraph</p>
+</body>
+</html>

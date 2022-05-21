@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input id="num1" type="number" placeholder="Enter first number">
+    <input id="num2" type="number" placeholder="Enter second number">
+    <br>
+    <br>
+    <button id="button">click here to find the product</button>
+    <button id="btn">click here to find the exponent</button>
+    <p>Answer</p>
+</body>
+
+</html>
+
+<script>
+    document.querySelector("#btn").addEventListener("click", myOutput);
+
+    function myOutput() {
+        var num1 = document.querySelector("#num1").value;
+        var num2 = document.querySelector("#num2").value;
+        var exponent = 1;
+
+        for (var i = 0; i < num2; i++) {
+            exponent = exponent * +num1;
+        }
+        document.querySelector("p").innerText = exponent;
+    }
+
+    document.querySelector("#button").addEventListener("click", myAlert);
+
+    function myAlert() {
+        var num1 = document.querySelector("#num1").value;
+        var num2 = document.querySelector("#num2").value;
+        alert(num1*num2);
+    }
+</script>

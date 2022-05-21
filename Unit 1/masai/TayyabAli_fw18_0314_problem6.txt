@@ -1,0 +1,39 @@
+// 1. Write a function that takes one parameter **(i.e array of string)** and returns array of string. **For Example : function firstLetterCapital(arr)**
+// 2. The function should perform the given task: Given an array, it will return the array of strings having the first letter of each string will be capital.
+
+
+
+
+function firstLetterCapital(array){
+  var lower = "abcdefghijklmnopqrstuvwxyz";
+  var upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  var new_arr = [];
+
+
+for(var k=0;k<array.length;k++){
+  var new_str = ""
+  for(var i=0;i<array[k].length;i++){
+    for(var j=0;j<lower.length;j++){
+      if(array[k][i] == lower[j]){
+        if(i==0){
+          new_str = new_str + upper[j]
+        }
+        else if(i>0){
+          new_str = new_str + lower[j]
+        }
+      }
+    }
+  }
+  new_arr[k] = new_str;
+}
+console.log(new_arr);
+}
+
+var array1 = ["masai","school"]
+var array2 = ["hi", "john", "how", "are", "you"];
+
+// output 1
+firstLetterCapital(array1);
+
+// output 2
+firstLetterCapital(array2);

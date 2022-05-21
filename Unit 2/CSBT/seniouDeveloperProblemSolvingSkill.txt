@@ -1,0 +1,11 @@
+Steps:-
+
+1. First off all I will ask that developer personally why are they delaying the work.
+
+2. I will start preparing a presentation to present the idea to the junior developers in a formal way.
+
+3. I will tell him/her don't overthink too much, and do whatever your gut says to get your code working and you you still find something missing ask your seniors.
+
+4. Do a lot of other things than just what is assigned to you. Try to get the big picture. Always remember coding is just 20 percent of overall work.
+
+5. and I will tell him/her that give your 100% to learn the technologies they are working on.

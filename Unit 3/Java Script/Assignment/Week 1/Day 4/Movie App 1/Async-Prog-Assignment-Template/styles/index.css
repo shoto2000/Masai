@@ -1,0 +1,25 @@
+#navbar{
+    display: flex;
+    flex-direction: row-reverse;
+    height: 50px;
+    align-items: center;
+    border: 3px solid black;
+    margin-bottom: 20px;
+}
+
+#navbar > a{
+    width: 100px;
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#slideshow{
+    margin: auto;
+    width: 75%;
+}
+
+#slideshow > img{
+    width: 100%;
+}

@@ -1,0 +1,29 @@
+.product {
+    width: 90%;
+    display: grid;
+    margin: auto;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+
+.product>div {
+    width: 100%;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.product>div>img {
+    width: 100%;
+}
+
+.product>div>h2,
+p,
+h3,
+button {
+    padding-left: 10px;
+    padding-right: 10px;
+    margin: 5px 0px;
+}
+
+.product>div>button {
+    border: 0px;
+}

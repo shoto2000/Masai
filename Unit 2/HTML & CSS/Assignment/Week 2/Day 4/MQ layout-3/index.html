@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Roboto:wght@300&display=swap"
+        rel="stylesheet">
+    <title>Document</title>
+    <style>
+        #container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fx);
+            grid-template-rows: 70px repeat(3, 150px);
+            gap: 10px 20px;
+            grid-template-areas:
+                "nav nav nav"
+                "l l r1"
+                "l l r2"
+                "l l r3";
+            font-family: 'Poppins', sans-serif;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        #container>div:nth-child(1) {
+            background-color: yellow;
+            grid-area: nav;
+        }
+
+        #container>div:nth-child(2) {
+            background-color: red;
+            grid-area: l;
+        }
+
+        #container>div:nth-child(3) {
+            background-color: rgb(106, 176, 0);
+            grid-area: r1;
+        }
+
+        #container>div:nth-child(4) {
+            background-color: rgb(106, 176, 0);
+            grid-area: r2;
+        }
+
+        #container>div:nth-child(5) {
+            background-color: rgb(106, 176, 0);
+            grid-area: r3;
+        }
+
+        div>div {
+            padding-left: 15px;
+            color: silver;
+            font-size: 20px;
+        }
+
+        h1 {
+            margin-top: 15px;
+            font-size: 30px;
+            color: black;
+        }
+
+        @media all and (min-width:451px) and (max-width:750px) {
+            #container {
+                display: grid;
+                grid-template-columns: repeat(3, 1fx);
+                grid-template-rows: 70px repeat(3, 150px);
+                gap: 10px 20px;
+                grid-template-areas:
+                    "nav nav nav"
+                    "l l l"
+                    "l l l"
+                    "r1 r2 r3";
+                font-family: 'Poppins', sans-serif;
+                font-family: 'Roboto', sans-serif;
+            }
+            h1{
+                font-size: 25px;
+                margin-top: 18px;
+            }
+        }
+        @media all and (max-width:450px){
+            #container {
+                display: grid;
+                grid-template-columns: repeat(2, 1fx);
+                grid-template-rows: 70px repeat(4, 100px);
+                gap: 10px 20px;
+                grid-template-areas:
+                "nav nav"
+                "l l"
+                "l l"
+                "r1 r1"
+                "r2 r2"
+                "r3 r3";
+                font-family: 'Poppins', sans-serif;
+                font-family: 'Roboto', sans-serif;
+            }
+            h1{
+                font-size: 20px;
+                margin-top: 21px;
+            }            
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div>
+            <h1>Navigation</h1>
+        </div>
+        <div>
+            <p>LEFT BOX</p>
+        </div>
+        <div>
+            <p>RIGHT BOX 1</p>
+        </div>
+        <div>
+            <p>RIGHT BOX 2</p>
+        </div>
+        <div>
+            <p>RIGHT BOX 3</p>
+        </div>
+    </div>
+</body>
+
+</html>

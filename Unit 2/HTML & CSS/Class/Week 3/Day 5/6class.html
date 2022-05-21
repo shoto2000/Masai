@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container{
+            height: 100px;
+            width: 100px;
+            background-color: teal;
+        }
+        .contain{
+            height: 100px;
+            width: 100px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+
+</body>
+</html>
+
+<script>
+    // 1. creating Element
+    // 2. Filling innerText
+    // 3. appending element to body
+    // 4. catch div and add attribute
+
+    // setAttribute("id","container")
+
+    var box = document.createElement("div")
+    box.innerText = "I am div";
+    box.setAttribute("id","container");
+    document.querySelector("body").append(box);
+
+    var box1 = document.createElement("div")
+    box1.innerText = "I am div 2";
+    box1.setAttribute("class","contain");
+    document.querySelector("body").append(box1);
+</script>

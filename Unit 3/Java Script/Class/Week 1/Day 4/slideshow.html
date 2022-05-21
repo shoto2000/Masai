@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="url" id="url">
+
+    <button onclick="storeImages()">Store Images</button>
+    <button onclick="gotoSlideshow()">Watch Slideshow</button>
+</body>
+</html>
+
+<script>
+
+    function gotoSlideshow(){
+        window.location.href = "slideshow1.html"
+    }
+    // slideshow
+
+    // multiple Images
+
+    function storeImages(){
+
+        let image_url = document.getElementById('url').value;
+
+        // there is an array present to push images
+
+        // step 2: pickup either localstorage array or create empty array
+
+        let images = JSON.parse(localStorage.getItem('images')) || [];
+
+        images.push(image_url);
+
+        localStorage.setItem("images",JSON.stringify(images));
+
+        document.getElementById('url').value = null;
+    }
+</script>

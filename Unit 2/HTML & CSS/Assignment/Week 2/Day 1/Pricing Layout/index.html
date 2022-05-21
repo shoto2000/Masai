@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <style>
+        *{
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+        #heading{
+            width: 40%;
+            height: auto;
+            margin: auto;
+            text-align: center;
+        }
+        #heading > h1{
+            font-size: 50px;
+        }
+        #heading>p{
+            margin-top: -20px;
+            color: grey;
+            line-height: 30px;
+        }
+        #card{
+            width: 70%;
+            height: 400px;
+            margin: auto;
+            display: flex;
+            text-align: center;
+        }
+        #card > div{
+            width: 30%;
+            height: 100%;
+            margin: auto;
+            box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+            border-radius: 20px;
+        }
+        #card > div:nth-child(1) h1{
+            color: green;
+        }
+        #card > div:nth-child(2) h1{
+            color: rgb(255, 115, 0);
+        }
+        #card > div:nth-child(3) h1{
+            color: rgb(48, 145, 201);
+        }
+        #card > div > h1 + p{
+            font-style: italic;
+            margin-top: -15px;
+            color: grey;
+        }
+        p+p{
+            padding: 0px 20px 0px 20px;
+            font-size: 20px;
+            line-height: 30px;
+            color: grey;
+        }
+        button{
+            border: 2px solid rgb(48, 145, 201);
+            background-color: white;
+            color: rgb(48, 145, 201);
+            border-radius: 10px;
+            padding: 15px 30px 15px 30px;
+            font-size: 20px;
+            margin-top: 20px;
+            margin-bottom: 40px;
+            font-weight: bold;
+        }
+        button:hover{
+            color: white;
+            background-color: rgb(48, 145, 201);
+        }
+        div > h2{
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="heading">
+        <h1>Choose a Plan that right for your business</h1>
+        <p>We collect reviews from our users so you can get an honest opinion of what an wxperience with our website are really like!</p>
+    </div>
+
+    <!-- Card Section -->
+
+    <div id="card">
+        <div>
+            <h2>Starter Plan</h2>
+            <h1 id="first">Free</h1>
+            <p>per month</p>
+            <p>We collect reviews from our users so you can get an honest opinion of what an wxperience with our website are really like!</p>
+            <button>Start Now</button>
+        </div>
+        <div>
+            <h2>Business Plan</h2>
+            <h1 id="second">$39.00</h1>
+            <p>per month</p>
+            <p>We collect reviews from our users so you can get an honest opinion of what an wxperience with our website are really like!</p>
+            <button>Start Now</button>
+        </div>
+        <div>
+            <h2>Premium Plan</h2>
+            <h1 id="third">$59.00</h1>
+            <p>per month</p>
+            <p>We collect reviews from our users so you can get an honest opinion of what an wxperience with our website are really like!</p>
+            <button>Start Now</button>
+        </div>
+    </div>
+</body>
+</html>

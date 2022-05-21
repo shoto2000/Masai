@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+        }
+
+        body {
+            width: 100%;
+            margin: 200px auto;
+            overflow: hidden;
+            position: relative;
+        }
+
+        span {
+            position: absolute;
+            top: 40%;
+            font-size: 60px;
+            font-weight: bold;
+            cursor: pointer;
+            left: .5%;
+            z-index: 1;
+        }
+
+        span:nth-of-type(2) {
+            left: 98%;
+            text-align: right;
+        }
+
+        section {
+            width: 90%;
+            margin: 10px auto;
+            display: flex;
+            justify-content: center;
+            overflow-x: auto;
+        }
+
+        section::-webkit-scrollbar {
+            /* visibility: hidden; */
+        }
+
+        section>div {
+            min-width: 23%;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            margin-right: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <span id="left" onclick="leftfun()">&#139;</span>
+    <span id="right" onclick="rightfun()">&#155;</span>
+    <section>
+
+    </section>
+</body>
+
+</html>
+
+<script>
+    var mangoesData = [
+        {
+            img: "https://s3.ap-south-1.amazonaws.com/fraazo-prod/products/product_images/000/000/329/original/data?1616795305",
+            name: "Alphonso Mango Devgad",
+            quantity: "6 pcs",
+            price: 479,
+            strike_price: 600
+        },
+        {
+            img: "https://s3.ap-south-1.amazonaws.com/fraazo-prod/products/product_images/000/000/135/original/data?1612689931",
+            name: "Mango Badami",
+            quantity: "1 kg",
+            price: 129,
+            strike_price: ""
+        },
+        {
+            img: "https://s3.ap-south-1.amazonaws.com/fraazo-prod/images/images/000/004/597/original/data?1647577454",
+            name: "Mango Totapuri Raw",
+            quantity: "1 kg",
+            price: 110,
+            strike_price: ""
+        },
+        {
+            img: "https://s3.ap-south-1.amazonaws.com/fraazo-prod/products/product_images/000/000/250/original/data?1621065378",
+            name: "Mango Lalbhag Sindhura",
+            quantity: "1 kg",
+            price: 110,
+            strike_price: ""
+        },
+        {
+            img: "https://fraazo-master.s3.ap-south-1.amazonaws.com/products/VMAN12.png",
+            name: "Mango Raw",
+            quantity: "250 g",
+            price: 14,
+            strike_price: ""
+        },
+        {
+            img: "https://fraazo-master.s3.ap-south-1.amazonaws.com/products/FKES1.png",
+            name: "Mango Kesar",
+            quantity: "1 kg",
+            price: 209,
+            strike_price: ""
+        },
+        {
+            img: "https://s3.ap-south-1.amazonaws.com/fraazo-prod/products/product_images/000/000/339/original/data?1620237313",
+            name: "Alphonso Mango Devgad (2 x 6 pcs)",
+            quantity: "1 Dozen",
+            price: 949,
+            strike_price: 1200
+        },
+        {
+            img: "https://s3.ap-south-1.amazonaws.com/fraazo-prod/images/images/000/007/294/original/data?1650906368",
+            name: "Mango Mallika",
+            quantity: "1 kg",
+            price: 167,
+            strike_price: ""
+        }
+
+    ]
+
+    function display(data) {
+        data.forEach(function (el) {
+            var box = document.createElement("div");
+            box.setAttribute("class","product_card");
+
+            var pimg = document.createElement("img");
+            pimg.src = el.img;
+            pimg.addEventListener("click",function(){
+                console.log(el);
+                window.location.href = "index.html";
+            })
+
+            var pname = document.createElement("p");
+            pname.innerText = el.name;
+
+            var pquantity = document.createElement("p");
+            pquantity.innerText = el.quantity;
+
+            var pprice = document.createElement("h5");
+            pprice.innerText = "₹" + el.price;
+            pprice.style.fontSize = "16px";
+
+            var pstrike_price = document.createElement("h5");
+            if (el.strike_price == "") {
+                pstrike_price.innerText = el.strike_price;
+            }
+            else {
+                pstrike_price.innerText = "₹" + el.strike_price;
+            }
+
+            var boxin = document.createElement("div");
+
+            var pricestore = document.createElement("div");
+
+            pricestore.append(pprice, pstrike_price)
+
+            boxin.append(pname, pquantity, pricestore)
+
+            box.append(pimg, boxin);
+
+            document.querySelector("section").append(box);
+        })
+    }
+
+    display(mangoesData);
+
+    var arr = document.getElementsByClassName("product_card");
+    console.log(arr);
+
+    var main = document.querySelector("section");
+    console.log(main);
+
+    function leftfun(){
+        main.append(arr[0]);
+    }
+
+    function rightfun(){
+        main.prepend(arr[arr.length-1]);
+    }
+    // var span = document.querySelector("span");
+    // var div = document.querySelector("div");
+    // var l = 0;
+    // span[1].onclick = ()=>{
+    //     l++;
+    //     for(var i of div){
+    //         if(l=0) {i.style.left = "0px";}
+    //         if(l=1) {i.style.left = "-740";}
+    //         if(l=2) {i.style.left = "-1480px";}
+    //         if(l=3) {i.style.left = "-2220px";}
+    //         if(l=4) {i.style.left = "-2960px";}
+    //         if(l>4) {l = 4;}
+    //     }
+    // }
+</script>

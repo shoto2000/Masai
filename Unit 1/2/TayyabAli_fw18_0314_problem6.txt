@@ -1,0 +1,27 @@
+// https://false-trouser-16e.notion.site/Problem-6-Unique-Char-1bb50e94eeaa4321b5b65bdbf4d10cd3
+
+
+
+var str = "amsterdam";
+
+var diary = {};
+
+for(var i=0;i<str.length;i++){
+  var char = str[i];
+
+  if(diary[char]==undefined){
+    diary[char] = 1;
+  }
+  else{
+    diary[char] = diary[char] + 1;
+  }
+}
+
+var string = ""
+for(var k in diary)
+{
+  if(diary[k]==1){
+    string = string + k;
+  }
+}
+console.log(string)

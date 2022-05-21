@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" id="YOB" placeholder="Enter year of birth">
+    <button onclick="YOBfun()">Submit</button>
+</body>
+</html>
+
+<script>
+    function YOBfun(){
+        var year = document.getElementById("YOB").value;
+        var age = 2022 - year;
+        if(age >= 21){
+            alert("valid age to get married");
+        }
+        else{
+            alert("not a valid age to get married");
+        }
+    }
+</script>

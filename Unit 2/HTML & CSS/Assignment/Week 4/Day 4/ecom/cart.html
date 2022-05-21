@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="thing.css">
+</head>
+<body>
+    <div class="nav">
+        <div class="logo">
+            <h1>Masai E-Com</h1>
+        </div>
+        <div class="text">
+            <h3>Mens</h3>
+            <h3><a href="products.html">Womens</a></h3>
+            <h3>Kids</h3>
+        </div>
+        <div class="user">
+            <h2>User</h2>
+            <h2><a href="cart.html">cart</a></h2>
+        </div>
+    </div>
+    
+    <div id="total"></div>
+
+    <div class="product"></div>
+</body>
+</html>
+
+<script>
+
+    var cartData = JSON.parse(localStorage.getItem("masai-cart")) || [];
+
+    var product = document.querySelector(".product");
+    var total = document.querySelector("#total");
+    var count = (localStorage.getItem("quantity")||0);
+
+    function display(data){
+        product.innerHTML = "";
+
+
+        data.forEach(function(el,index){
+
+            let card = document.createElement("div");
+
+            let img = document.createElement("img")
+            img.src = el.img;
+
+            let title = document.createElement("h2");
+            title.innerText = el.brand;
+
+            let desc = document.createElement("p");
+            desc.innerText = el.name;
+
+            let category = document.createElement("h3");
+            category.innerText = el.catagory;
+            
+            let plus = document.createElement("button");
+            plus.innerText = "+";
+            plus.addEventListener("click",function(){
+                incfun(el)
+            })
+            
+            let quantity = document.createElement("h3");
+            quantity.innerText = count;
+            
+            let minus = document.createElement("button");
+            minus.innerText = "-";
+            minus.addEventListener("click",function(){
+                decfun(el)
+            })
+
+            let price = document.createElement("h2");
+            price.innerText = el.price;
+            
+            let button = document.createElement("button");
+            button.innerText = "Delete";
+            button.addEventListener("click",function(){
+                Delete(el,index);
+            })
+            card.append(img,title,desc,category,plus,quantity,minus,price,button);
+            
+            product.append(card);
+        });
+
+    }
+
+    function decfun(el) {
+        if(count>1)
+        count--;
+        localStorage.setItem("quantity",count);
+        window.location.reload();
+    }
+
+    function incfun() {
+        count++;
+        localStorage.setItem("quantity",count);
+        window.location.reload();
+    }
+
+    function add(data){
+
+        var tot = data.reduce(function(acc,el){
+            return acc + +(el.price)
+        },0);
+
+        var totalextra = document.createElement("h1");
+        totalextra.innerText = "Total:"+tot;
+
+        total.append(totalextra)
+    }
+    
+    console.log(add(cartData));
+
+    display(cartData);
+
+    function Delete(el,index){
+        cartData.splice(index,1);
+        localStorage.setItem("masai-cart",JSON.stringify(cartData));
+        window.location.reload();
+    }
+
+
+
+</script>

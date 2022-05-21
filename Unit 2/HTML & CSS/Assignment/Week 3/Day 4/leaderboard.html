@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container{
+            width: 30%;
+            height: 100px;
+            display: flex;
+            margin: auto;
+            justify-content: space-between;
+        }
+        #container>div{
+            min-width: 100px;
+            height: 100px;
+        }
+        #container>div>div{
+            width: 100%;
+            height: 60%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: red;
+            font-size: 30px;
+        }
+        #container>div:last-child>div{
+            background-color: green;
+        }
+        #container>div>h2{
+            text-align: center;
+            margin-top: 0px;
+        }
+        h1{
+            text-align: center;
+            width: 25%;
+            margin: auto;
+        }
+        #main{
+            width: 20%;
+            height: auto;
+            margin: auto;
+        }
+        #main>div:first-child{
+            min-width: 250px;
+            height: 120px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 50px;
+            background-color: grey;
+            margin-bottom: 20px;
+        }
+        #main>div:nth-child(2){
+            display: grid;
+            margin: auto;
+            grid-template-columns: repeat(3,1fr);
+            grid-template-rows: repeat(4,1fr);
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        #main>div:nth-child(2)>div{
+            min-width: 70px;
+            height: 70px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 30px;
+        }
+        .green{
+            background-color: green;
+        }
+        .red{
+            background-color: red;
+        }
+        .purple{
+            background-color: purple;
+        }
+        #main>div:last-child{
+            min-width: 250px;
+            height: 70px;
+            background-color: black;
+            color: white;
+            font-size: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #main>div:nth-child(2)>div:hover{
+            background-color: teal;
+            color: white;
+        }
+        #main>div:nth-child(2)>.blank:hover{
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div>
+            <div>43</div>
+            <h2>MIN</h2>
+        </div>
+        <div>
+            <div>2019</div>
+            <h2>MAX</h2>
+        </div>
+    </div>
+    <h1>SCORE</h1>
+    <div id="main">
+        <div>
+            #
+        </div>
+        <div>
+            <div class="green">1</div>
+            <div class="red">2</div>
+            <div class="green">3</div>
+            <div class="red">4</div>
+            <div class="red">5</div>
+            <div class="red">6</div>
+            <div class="green">7</div>
+            <div class="red">8</div>
+            <div class="green">9</div>
+            <div class="blank"></div>
+            <div class="purple">0</div>
+            <div class="blank"></div>
+        </div>
+        <div>
+            ENTER
+        </div>
+    </div>
+</body>
+</html>
+
+<script>
+    var keys = document.querySelectorAll("#main>div:nth-child(2)>div");
+    var bag = "";
+
+    for(var i=0;i<keys.length;i++){
+        keys[i].addEventListener("click",myMachine);
+    }
+
+    function myMachine(){
+        var targetNumber = event.target.innerText;
+        bag = bag + targetNumber;
+        document.querySelector("#main>div:first-child").innerText = bag;
+    }
+    var enter = document.querySelector("#main>div:last-child");
+    enter.addEventListener("click",myEnter);
+
+    function myEnter(){
+        document.querySelector("#main>div:first-child").innerText = "#";
+        var min = document.querySelector("#container>div:first-child>div").innerText;
+        var max = document.querySelector("#container>div:last-child>div").innerText;
+        if(bag < min){
+            document.querySelector("#container>div:first-child>div").innerText = bag;
+        }
+        else if(bag > max){
+            document.querySelector("#container>div:last-child>div").innerText = bag;
+        }
+        bag = "";
+    }
+</script>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container {
+            width: 90%;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        #container>div {
+            border: 1px solid rgb(216, 216, 216);
+        }
+
+        #container>div>img {
+            width: 100%;
+        }
+
+        #container>div>h2,
+        h3 {
+            margin-left: 10px;
+        }
+
+        div>div>div {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+            width: 50%;
+        }
+
+        h2+h2 {
+            text-decoration: line-through;
+            color: grey;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container"></div>
+</body>
+
+</html>
+
+<script>
+    var data = [
+        {
+            imgUrl: "https://preview.colorlib.com/theme/eiser/img/product/inspired-product/xi1.jpg.pagespeed.ic.mkSk-Af1ka.webp",
+            name: "LATEST MEN’S SNEAKER",
+            price: "$25.00",
+            strikedOffPrice: "$95.00"
+        }, {
+            imgUrl: "https://preview.colorlib.com/theme/eiser/img/product/inspired-product/xi2.jpg.pagespeed.ic.uBrpABaJqp.webp",
+            name: "LATEST MEN’S SNEAKER",
+            price: "$35.00",
+            strikedOffPrice: "$100.00"
+        }, {
+            imgUrl: "https://preview.colorlib.com/theme/eiser/img/product/inspired-product/xi3.jpg.pagespeed.ic.iO_cFEPy2K.webp",
+            name: "LATEST MEN’S SNEAKER",
+            price: "$35.00",
+            strikedOffPrice: "$100.00"
+        },
+        {
+            imgUrl: "https://preview.colorlib.com/theme/eiser/img/product/inspired-product/xi4.jpg.pagespeed.ic.kmiQW8I5wx.webp",
+            name: "LATEST MEN’S SNEAKER",
+            price: "$35.00",
+            strikedOffPrice: "$100.00"
+        }
+    ]
+
+    var container = document.querySelector("#container");
+
+    data.map(function (el) {
+        var box = document.createElement("div");
+
+        var img = document.createElement("img");
+        img.src = el.imgUrl;
+
+        var name = document.createElement("h3");
+        name.innerText = el.name;
+
+        var div = document.createElement("div");
+
+        var price = document.createElement("h2");
+        price.innerText = el.price;
+
+        var sprice = document.createElement("h2");
+        sprice.innerText = el.strikedOffPrice
+
+        div.append(price, sprice);
+
+        box.append(img, name, div);
+
+        container.append(box);
+    });
+
+
+</script>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="https://masai-website-images.s3.ap-south-1.amazonaws.com/Nrupul_d3fe3b289a.jpg" alt="">
+    <br>
+    <h2 id="likes">Show likes here</h2>
+    <h2 id="dislikes">Show dislikes here</h2>
+    <br>
+    <button onclick="likefun()">Like</button>
+    <button onclick="dislikefun()">Dislike</button>
+    <!-- <h1 id="head1">I am heading 1</h1> -->
+</body>
+</html>
+
+<script>
+    var like = 0;
+    var dislike = 0;
+
+    function likefun(){
+        like++;
+        console.log(like);
+        document.getElementById("likes").innerText = like;
+    }
+    
+    function dislikefun(){
+        dislike++;
+        console.log(dislike);
+        document.getElementById("dislikes").innerText = dislike;
+    }
+
+    // document.getElementById("head1").innerText = "I am heading now";
+
+
+</script>

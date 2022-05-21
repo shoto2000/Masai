@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700;900&family=Roboto:wght@100;300;400;500;700;900&display=swap"
+        rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            font-family: 'Poppins', sans-serif;
+            font-family: 'Roboto', sans-serif;
+        }
+        
+        #one{
+            background-color: rgb(240, 244, 255);
+            text-align: center;
+        }
+
+        #two{
+            text-align: center;
+        }
+
+        h1{
+            text-align: center;
+        }
+
+        #container1 {
+            display: flex;
+            width: 75%;
+            margin: auto;
+            justify-content: space-between;
+        }
+
+        #container1 > div{
+            box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+            width: 25%;
+            border-radius: 20px;
+            background-color: white;
+            text-align: left;
+            padding: 20px;
+        }
+        
+        #container2 {
+            display: flex;
+            width: 80%;
+            margin: auto;
+            justify-content: space-between;
+        }
+        
+        #container2 > img{
+            width: 30%;
+            border-radius: 20px;
+            background-color: white;
+            text-align: left;
+            padding: 20px;
+        }
+
+        #container1 > div > img{
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+            width: 100%;
+        }
+
+        button{
+            border: 1px solid red;
+            color: red;
+            background-color: transparent;
+            text-align: center;
+            margin: 30px auto;
+            border-radius: 8px;
+            font-size: 18px;
+            padding: 10px;
+        }
+
+        button:hover{
+            color: white;
+            background-color: red;
+        }
+
+        img+p{
+            color: rgb(0, 89, 255);
+        }
+        </style>
+</head>
+
+<body>
+    <div id="one">
+        <br>
+        <h1>Masai In The News</h1>
+
+        <div id="container1">
+            <div>
+                <img src="https://masai-website-images.s3.ap-south-1.amazonaws.com/ET_3754cc10ec.png" alt="">
+                <p>21 dec 2021</p>
+                <h4>Edtech startup Masai School acquires data analytics firm Prepleaf for $1 million.</h4>
+                <p>With their latest acquisition, Masai moves one step closer to becoming</p>
+            </div>
+            <div>
+                <img src="https://masai-website-images.s3.ap-south-1.amazonaws.com/money_Control_c3e25f5ceb.png" alt="">
+                <p>21 dec 2021</p>
+                <h4>Edtech startup Masai School acquires data analytics firm Prepleaf for $1 million.</h4>
+                <p>With their latest acquisition, Masai moves one step closer to becoming</p>
+            </div>
+            <div>
+                <img src="https://masai-website-images.s3.ap-south-1.amazonaws.com/vccircle_6ef779c958.png" alt="">
+                <p>21 dec 2021</p>
+                <h4>Edtech startup Masai School acquires data analytics firm Prepleaf for $1 million.</h4>
+                <p>With their latest acquisition, Masai moves one step closer to becoming</p>
+            </div>
+        </div>
+
+        <button>See More ></button>
+    </div>
+
+    <div id="two">
+        <br>
+        <h1>Our Investors, Who Believe In Us</h1>
+
+        <div id="container2">
+                <img src="https://www.masaischool.com/img/our-investors/unitus.svg" alt="">
+                <img src="https://www.masaischool.com/img/our-investors/omidyar.svg" alt="">
+                <img src="https://www.masaischool.com/img/our-investors/indiaQuotient.svg" alt="">
+        </div>
+
+        <button>See More Investors ></button>
+    </div>
+</body>
+
+</html>

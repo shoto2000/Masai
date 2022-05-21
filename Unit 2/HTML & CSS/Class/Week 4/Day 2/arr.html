@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+    var number = [6,9,8,7]; // "6,9,7,8"
+
+    localStorage.setItem("luckyNumbers", number);
+
+    var array = localStorage.getItem("luckyNumbers");
+    console.log(typeof(array)) // It will show string insted of array because local storage works only on numbers and strings
+    console.log(array);
+
+    // JSON methods
+    // JSON>stringify()
+
+    localStorage.setItem("Numbers",JSON.stringify(number));
+
+    var array2 = JSON.parse(localStorage.getItem("Numbers"));
+    console.log(typeof array2);
+    console.log(array2);
+
+    var names = ["anurag","tayyab","sherlock"];
+    localStorage.setItem("studentNames",JSON.stringify(names));
+    
+    var out1 = localStorage.getItem("studentNames");
+    console.log(out1);
+
+    var out2 = JSON.parse(localStorage.getItem("studentNames"));
+    console.log(out2);
+
+</script>

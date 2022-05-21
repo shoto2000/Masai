@@ -1,0 +1,29 @@
+// https://false-trouser-16e.notion.site/Problem-5-Products-Cart-Object-e66f69c70f934353b34b68dfb4b6c99b
+
+// declaring variables
+var name = ["Rice", "Dal", "Salt"];
+var quantity = [2, 3, 1];
+var price = [60, 50, 20];
+
+// declaring object
+var object = {
+  data : []
+};
+
+// input data in object data;
+for(var i=0;i<name.length;i++){
+object.data[i] = ({name : name[i], quantity : quantity[i], price : price[i]});
+}
+
+// adding a method in Object
+object.total = function(){
+    var total = 0;
+    for(var i=0;i<this.data.length;i++){
+      var a = this.data[i];
+      total = total + a.quantity * a.price;
+    }
+    console.log(total);
+  }
+
+// final result
+object.total();

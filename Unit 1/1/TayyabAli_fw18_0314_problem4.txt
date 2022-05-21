@@ -1,0 +1,20 @@
+//https://false-trouser-16e.notion.site/Problem-4-User-Age-Filter-d8f84ff410714c49a673ea29fa7fd797
+
+var names = ["Nrupul", "Prateek", "Aman", "Albert", "Yogesh"];
+var ages = [32, 30, 26, 28, 44];
+
+var array = [];
+
+for(var i=0;i<names.length;i++){
+  array.push({name : names[i], age : ages[i]});
+}
+console.log(array);
+
+var str = "";
+
+for(var i=0;i<array.length;i++){
+  if(array[i].age>30){
+    str = str + array[i].name + " ";
+  }
+}
+console.log(str);

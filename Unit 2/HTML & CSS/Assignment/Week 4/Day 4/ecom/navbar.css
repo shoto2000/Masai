@@ -1,0 +1,49 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    background-color: rgb(215,215,215);
+}
+
+.nav{
+    display: flex;
+    height: 80px;
+    width: 100%;
+    margin: auto;
+    background-color: black;
+    color: white;
+    justify-content: space-between;
+}
+
+.logo{
+    width: 20%;
+    display: flex;
+}
+
+.logo>h1{
+    margin: auto;
+}
+
+.text{
+    width: 45%;
+    display: flex;
+}
+.text>h3{
+    margin: auto;
+}
+
+.user{
+    width:25%;
+    display: flex;
+}
+
+.user>h2{
+    margin: auto;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}

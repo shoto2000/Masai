@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #nav{
+            width: 100%;
+            height: 80px;
+            background-color: yellow;
+            margin-bottom: 20px;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+        }
+        #container{
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            grid-template-rows: 200px;
+            grid-template-areas: 
+            "box1 box2 box3 box4";
+            gap: 20px;
+        }
+        #container > div{
+            justify-content: center;
+            align-items: center;
+            display: flex;
+        }
+        #container>div:nth-child(1){
+            grid-area: box1;
+            background-color: red;
+        }
+        #container>div:nth-child(2){
+            grid-area: box2;
+            background-color: green;
+        }
+        #container>div:nth-child(3){
+            grid-area: box3;
+            background-color: blue;
+        }
+        #container>div:nth-child(4){
+            grid-area: box4;
+            background-color: grey;
+        }
+        @media all and (min-width:451px) and (max-width:750px){
+            #container{
+                display: grid;
+                grid-template-columns: repeat(2,1fr);
+                grid-template-rows: 200px 200px;
+                grid-template-areas: 
+                "box1 box2"
+                "box3 box4";
+                gap: 20px;
+            }
+        }
+        @media all and (min-width:80px) and (max-width:450px){
+            #container{
+                display: grid;
+                grid-template-columns: 1fr;
+                grid-template-rows: 200px 200px 200px 200px;
+                grid-template-areas: 
+                "box1"
+                "box2"
+                "box3"
+                "box4";
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="nav">Navigation</div>
+    <div id="container">
+        <div>Box 1</div>
+        <div>Box 2</div>
+        <div>Box 3</div>
+        <div>Box 4</div>
+    </div>
+</body>
+</html>

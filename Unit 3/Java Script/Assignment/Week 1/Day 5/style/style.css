@@ -1,0 +1,26 @@
+table{
+    width: 70%;
+    margin: auto;
+}
+
+table th,td{
+    height: 40px;
+    width: 15%;
+    text-align: center;
+}
+
+table td>img{
+    height: 150px;
+    border-radius: 10px;
+}
+
+th{
+    background-color: teal;
+    color: white;
+    font-size: 20px;
+    border-radius: 10px;
+}
+
+td{
+    font-size: 16px;
+}

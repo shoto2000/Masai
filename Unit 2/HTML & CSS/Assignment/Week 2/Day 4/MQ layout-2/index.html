@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Roboto:wght@300&display=swap"
+        rel="stylesheet">
+    <title>Document</title>
+    <style>
+        #container {
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+            grid-template-rows: 70px 500px;
+            gap: 20px 40px;
+            grid-template-areas:
+                "nav nav"
+                "l r";
+            font-family: 'Poppins', sans-serif;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        #container>div:nth-child(1) {
+            background-color: yellow;
+            grid-area: nav;
+        }
+
+        #container>div:nth-child(2) {
+            background-color: red;
+            grid-area: l;
+        }
+
+        #container>div:nth-child(3) {
+            background-color: rgb(106, 176, 0);
+            grid-area: r;
+        }
+
+        div>div {
+            padding-left: 15px;
+            color: silver;
+            font-size: 20px;
+        }
+
+        h1 {
+            margin-top: 15px;
+            font-size: 30px;
+            color: black;
+        }
+
+        @media all and (max-width:600px) {
+            #container {
+                display: grid;
+                grid-template-columns: 1fr;
+                grid-template-rows: 70px 250px 250px;
+                gap: 20px 40px;
+                grid-template-areas:
+                    "nav"
+                    "l"
+                    "r";
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div>
+            <h1>Navigation</h1>
+        </div>
+        <div>
+            <p>LEFT BOX</p>
+        </div>
+        <div>
+            <p>RIGHT BOX</p>
+        </div>
+    </div>
+</body>
+
+</html>

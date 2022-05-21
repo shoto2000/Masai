@@ -1,0 +1,18 @@
+// https://false-trouser-16e.notion.site/Problem-4-Rectangle-Object-fe077924e646457c9bfb02561cc675f
+
+
+var rectangle = {
+  length : 20,
+  width : 10,
+  perimeter : function(){
+    var peri = 2*(this.length + this.width);
+    console.log(peri);
+  },
+  area : function(){
+    var are = this.length * this.width;
+    console.log(are)
+  }
+};
+
+rectangle.perimeter();
+rectangle.area();

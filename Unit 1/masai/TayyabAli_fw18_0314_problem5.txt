@@ -1,0 +1,53 @@
+// Part 1: Given a list of dish data with category and price, create a list of key-value pairs from the input
+
+dish = ["Paratha", "Masala Dosa", "Noodles", "Spring Rolls", "Samosa"];
+category = ["North Indian", "South Indian", "Chinese", "Chinese", "North Indian"];
+price  = [40, 80, 50, 60, 25];
+
+
+var data = [];
+
+for(var i=0;i<dish.length;i++){
+  var d = dish[i];
+  var c = category[i];
+  var p = price[i];
+  data[i] = {name : d, price : p, category : c};
+}
+
+// <---------------------------------------------------------------->
+
+// Part 2: From the above data, Write a function i.e getDishesNames(data) that will take the above data as input and print all the dish's names available in the restaurant.
+
+function getDishesNames(arr){
+  for(var i=0;i<arr.length;i++){
+    console.log(arr[i].name);
+  }
+}
+
+console.log("Dishes Name:-")
+getDishesNames(data,);
+console.log("\n");
+
+// <---------------------------------------------------------------->
+
+// Part 3: From the above data, Write a function i.e getMaxPriceDish(data) that will take the above data as input and return an object of a dish having maximum price.
+
+function getMaxPriceDish(array){
+  var max_price = -Infinity;
+
+  for(var i=0;i<array.length;i++){
+    var current = array[i].price;
+    var print;
+    if(current > max_price){
+      max_price = current;
+      print = array[i];
+    }
+  }
+  console.log(print);
+}
+
+console.log("Maximum Price Item:-")
+getMaxPriceDish(data);
+console.log("\n");
+
+// <---------------------------------------------------------------->
