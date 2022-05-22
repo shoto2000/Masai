@@ -1,25 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
-    <form onsubmit="submitProduct(event)" id="form">
-        <input type="text" id="name" placeholder="Product Name">
-        <input type="text" id="category" placeholder="Category">
-        <input type="text" id="image" placeholder="Image Url">
-        <input type="number" id="price" placeholder="Price">
-        <select id="gender">
-            <option>Select Gender</option>
-            <option value="male">Male</option>
-            <option value="female">Female</option>
-        </select>
-        <!-- <input type="boolean" id="sold" placeholder="Sold"> -->
-        <input type="submit" id="add">
-    </form>
+    <div id="winner"></div>
+    <div id="member-1"></div>
+    <div id="member-2"></div>
+    <div id="member-3"></div>
+    <button id="roll">ROLL THE DICE</button>
 </body>
+
 </html>
-<script src="main.js"></script>
+<script>
+    document.querySelector("#roll"), addEventListener("click", find)
+    function find() {
+        var box1 = document.querySelector("#member-1");
+        box1.innerText = Math.floor(Math.random() * 6);
+
+        var box2 = document.querySelector("#member-2");
+        box2.innerText = Math.floor(Math.random() * 6);
+
+        var box3 = document.querySelector("#member-3");
+        box3.innerText = Math.floor(Math.random() * 6);
+
+        var ban = document.querySelector("#winner")
+
+        if (box1.innerText > box2.innerText && box1.innerText > box3.innerText) {
+            ban.innerText = "member - 1 is winner"
+            document.querySelector("#member-1").style.backgroundColor = "green"
+            if (box2.innerText > box3.innerText) {
+                document.querySelector("#member-3").style.backgroundColor = "red"
+                document.querySelector("#member-2").style.backgroundColor = "yellow"
+            }
+            else {
+                document.querySelector("#member-3").style.backgroundColor = "yellow"
+                document.querySelector("#member-2").style.backgroundColor = "red"
+            }
+
+        }
+
+
+        else if (box2.innerText > box1.innerText && box2.innerText > box3.innerText) {
+            ban.innerText = "member - 2 is winner"
+            document.querySelector("#member-2").style.backgroundColor = "green"
+            if (box1.innerText > box3.innerText) {
+                document.querySelector("#member-3").style.backgroundColor = "red"
+                document.querySelector("#member-1").style.backgroundColor = "yellow"
+            }
+            else {
+                document.querySelector("#member-3").style.backgroundColor = "yellow"
+                document.querySelector("#member-1").style.backgroundColor = "red"
+            }
+
+        }
+
+
+        else if (box3.innerText > box2.innerText && box3.innerText > box1.innerText) {
+            ban.innerText = "member - 3 is winner"
+            document.querySelector("#member-3").style.backgroundColor = "green"
+            if (box2.innerText > box3.innerText) {
+                document.querySelector("#member-1").style.backgroundColor = "red"
+                document.querySelector("#member-2").style.backgroundColor = "yellow"
+            }
+            else {
+                document.querySelector("#member-1").style.backgroundColor = "yellow"
+                document.querySelector("#member-2").style.backgroundColor = "red"
+            }
+
+        } 
+
+        else if(box1.innerText == box2.innerText == box3.innerText){
+            ban.innerText = "It's a Draw";
+            document.querySelector("#member-1").style.backgroundColor = "blue";
+            document.querySelector("#member-2").style.backgroundColor = "blue";
+            document.querySelector("#member-3").style.backgroundColor = "blue";
+        }
+    }
+
+</script>
