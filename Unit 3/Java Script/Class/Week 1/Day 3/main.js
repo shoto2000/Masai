@@ -175,13 +175,13 @@
 // arr3.prnt();
 // console.log(Object.values(arr3));
 
-let grandfather = {
-    heigth: "tall",
-}
+// let grandfather = {
+//     heigth: "tall",
+// }
 
-let father = Object.create(grandfather);
+// let father = Object.create(grandfather);
 
-let son = Object.create(father);
+// let son = Object.create(father);
 
-son.name = "Babu Bhaiya"
-console.log(son);
+// son.name = "Babu Bhaiya"
+// console.log(son);

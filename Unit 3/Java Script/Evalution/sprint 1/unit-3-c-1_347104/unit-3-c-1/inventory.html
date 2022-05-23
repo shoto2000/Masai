@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      *{
+        margin: 0px;
+        padding: 0px;
+      }
+
+      #navbar{
+        background-color: black;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 40px;
+      }
+
+      #navbar > button{
+        background-color: transparent;
+        color: white;
+        border: 1px solid white;
+        padding: 5px 10px;
+        border-radius: 5px;
+      }
+
+      #all_products{
+        display: grid;
+        width: 90%;
+        margin: auto;
+        grid-template-columns: repeat(4,1fr);
+        gap: 32px;
+      }
+      #all_products>div{
+        text-align: center;
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        border-radius: 20px;
+      }
+      #all_products>div:hover{
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+      }
+      #all_products > div button,img,h3{
+        margin-bottom: 10px;
+      }
+      #all_products > div > button{
+        padding: 5px 10px;
+        border-radius: 5px;
+        border: 2px solid red;
+        background-color: transparent;
+        color: red;
+      }
+      
+      #all_products > div > button:hover{
+        color: white;
+        background-color: red;
+      }
+    </style>
+    <title>Document</title>
+  </head>
+
+  <style></style>
+
+  <body>
+    <div id="navbar">
+      <!--Create Add More Product button here, give id as "add_more_product". avoid making spelling mistakes in HTML id's-->
+      <button onclick="showIndex()" id="add_more_product">Add More Product</button>
+    </div>
+    <div id="all_products">
+      <!--append all products data here in grid format-->
+      <!-- The Remove Product button will have id as "remove_product" -->
+    </div>
+  </body>
+</html>
+
+<script src="./scripts/inventory.js"></script>
