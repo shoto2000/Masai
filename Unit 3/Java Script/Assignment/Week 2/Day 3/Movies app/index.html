@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            text-align: center;
+            background-color: black;
+            color: white;
+        }
+        input,button{
+            height: 30px;
+            border-radius: 5px;
+            border: 2px solid black;
+            margin-bottom: 20px;
+        }
+        input{
+            text-align: left;
+            border-color: white;
+        }
+        button{
+            border: 2px solid red;
+            background-color: transparent;
+            color: red;
+        }
+        button:hover{
+            color: white;
+            background-color: red;
+        }
+
+        #container{
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            gap: 30px;
+        }
+        #container>div{
+            box-shadow: rgba(255, 255, 255, 0.24) 0px 3px 8px;
+            border-radius: 15px;
+        }
+        #container>div>img{
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text" id="one">
+    <button onclick="oneFun()" id="btn">Submit</button>
+
+    <div id="container"></div>
+</body>
+
+</html>
+
+<script>
+
+    let movies = document.querySelector("#container");
+
+    async function oneFun() {
+        let name = document.querySelector("#one").value;
+
+        try {
+            const url = `http://www.omdbapi.com/?s=${name}&apikey=18cbb47b`;
+
+            let res = await fetch(url);
+
+            let data = await res.json();
+
+            if(data.Search == null){
+                movies.innerHTML = null;
+                let image = document.createElement("img");
+                image.src = "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fstambrose.us%2Fwp-content%2Fuploads%2F2018%2F01%2Fpage-not-found.gif&f=1&nofb=1"
+
+                movies.append(image);
+            }
+            else{
+                append(data.Search);
+                console.log(data.Search);
+            }
+            // return data.Search;
+
+        } catch(error) {
+            console.log("error: ",error);
+        }
+
+    }
+
+    function append(data){
+        movies.innerHTML = null;
+        data.forEach(function(el){
+            let box = document.createElement("div");
+
+            let image = document.createElement("img");
+            image.src = el.Poster;
+
+            let h3 = document.createElement("h3");
+            h3.innerText = el.Title;
+
+            let p1 = document.createElement("p");
+            p1.innerText = el.Year;
+
+            let p2 = document.createElement("p");
+            p2.innerText = el.Type
+
+            let p3 = document.createElement("p");
+            p3.innerText = `IMDB Rating: ${el.imdbID}`;
+
+            box.append(image,h3,p1,p2,p3);
+
+            movies.append(box);
+        })
+    }
+</script>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <select id="select">
+        <option>Selec</option>
+        <option value="Burger">Burger</option>
+        <option value="Pizza">Pizza</option>
+        <option value="Pasta">Pasta</option>
+        <option value="Hotdog">Hotdog</option>
+    </select>
+    <button id="button" onclick="mybtn()">Order</button>
+    <!-- <button onclick="clickFun()">Order</button> -->
+
+    <div id="container">
+
+    </div>
+</body>
+
+</html>
+
+<script>
+    
+    function mybtn(){
+
+        let arr = [
+            {
+                name:"Burger",
+                img:"https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.5lcYx3wnTdqxUjlv_t3a2gHaE8%26pid%3DApi&f=1"
+            },
+            {
+                name:"Pizza",
+                img:"https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.a-UewhYPhQNOEYSHTnGkuAHaE8%26pid%3DApi&f=1"
+            },
+            {
+                name:"Pasta",
+                img:"https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.g3YqYAI54d_wXP7EZJ7qugHaE8%26pid%3DApi&f=1"
+            },
+            {
+                name:"Hotdog",
+                img:"https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.CAd6pdyy0Xt56sfD3vbSuAHaE8%26pid%3DApi&f=1"
+            }
+        ];
+
+        let order = document.querySelector("#container");
+
+        order.innerHTML = null;
+
+        let select = document.querySelector("#select").value;
+
+        let thePromise = new Promise(function(resolve,reject){
+
+            let time = Math.random() * 10000;
+            // let orderid = Math.random() * 6;
+            
+            arr.forEach(function(el){
+                setTimeout(function(){
+                    if(select === el.name){
+                        resolve(el.img);
+                        let img = document.createElement("img")
+                        img.src = el.img;
+
+                        // let order = document.createElement("h3");
+                        // order.innerText = orderid;
+
+                        order.append(img);
+                    }
+                    else{
+                        reject;
+                    }
+                },time);
+
+            });
+        })
+        thePromise.then(function(res){
+            console.log("order ready");
+        }).catch(function(err){
+            console.log(`${err}`);
+        })
+    }
+
+</script>

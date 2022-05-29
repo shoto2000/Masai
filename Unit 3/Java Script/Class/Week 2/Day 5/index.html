@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input{
+            width: 200px;
+        }
+        #movies{
+            height: 200px;
+            width: 200px;
+            border: solid 1px black;
+            border-top: none;
+            overflow: scroll;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" oninput="debounceFunction(main,1000)" id="query"/>
+
+    <div id="movies"></div>
+</body>
+</html>
+
+<script>
+
+    // accept the data
+
+    // fetch the data
+    // append data
+    let movies_div = document.querySelector("#movies");
+
+    let id;
+    
+    async function searchMovies(q){
+        // prepare url
+
+        try{
+            let url =`http://www.omdbapi.com/?s=${q}&apikey=18cbb47b`;
+    
+            let res = await fetch(url);
+    
+            let data = await res.json();            
+
+            return data.Search;
+            } catch(error){
+            console.log("error:",error);
+        }
+
+
+        // console.log(data)
+    }
+
+    async function main(){
+        let query = document.querySelector("#query").value;
+        // console.log("query",query);
+
+        let response = searchMovies(query); // who is returning a promise
+
+        let data = await response ;
+
+        appendMovies(data);
+        // console.log("data:", data);
+
+    }
+
+    function appendMovies(movies){
+        if(movies===undefined){
+            return false;
+        }
+        movies_div.innerHTML = null;
+        movies.forEach(function(el){
+
+            let p = document.createElement("p")
+            p.innerText = el.Title;
+
+            movies_div.append(p);
+
+        })
+    }
+
+    function debounceFunction(func,delay){
+        if(id){
+            clearTimeout(id);
+        }
+        setTimeout(function(){
+
+            func();
+
+        },delay)
+    }
+</script>

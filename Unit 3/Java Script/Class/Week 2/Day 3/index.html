@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container{
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            gap: 20px;
+        }
+        #container img{
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+
+    </div>
+</body>
+
+</html>
+
+<script>
+    // API :-
+
+    /*
+    
+    1. Fulfilled // Give us the Data
+    2. Pending  // Delay / take time
+    3. Rejected // May reject our request
+
+    */
+
+    // let x = fetch(); // It will take time
+    // console.log(x);
+
+    // Youtube , Google map , Facebook, twitter
+
+    // const url = "https://reqres.in/api/users"; //Destination
+
+    // // fetch(url).then(function (res) {
+    // //     // Readable + stream(data in chunks)
+    // //     // Collect the stream
+    // //     return res.json(); // res.collect()
+    // // }).then(function (res){
+    // //     console.log(res);
+    // // }).catch(function (err) {
+    // //     console.log(err);
+    // // })
+
+    // // Async Await
+
+    // async function getData() {
+    //     try {
+    //         let res = await fetch(url);
+
+    //         let users = await res.json();
+
+    //         append(users.data);
+
+    //         console.log(users.data);
+    //     } catch(error) {
+    //         console.log(error);
+    //     }
+    // }
+
+    // var a = getData();
+
+    // function append(data){
+    //     data.forEach(function(el){
+    //         let container = document.querySelector("#container");
+    //         let img = document.createElement("img");
+    //         img.src = el.avatar;
+
+    //         let h2 = document.createElement("h2");
+    //         h2.innerText = el.first_name;
+
+    //         let p = document.createElement("p");
+    //         p.innerText = el.email;
+
+    //         let div =  document.createElement("div");
+    //         div.append(img,h2,p);
+
+    //         container.append(div);
+    //     })
+    // }
+
+    const url = "https://fakestoreapi.com/products";
+
+    async function getData() {
+        try {
+            let res = await fetch(url);
+
+            let products = await res.json();
+
+            console.log(products);
+        } catch(error) {
+            console.log(error);
+        }
+    }
+    getData();
+
+
+</script>

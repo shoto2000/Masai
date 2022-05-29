@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <img id="loading_img"
+    src="https://media3.giphy.com/media/l3nWhI38IWDofyDrW/200w.webp?cid=ecf05e47etysuk5nww12m2yoq9xvfa8e5qcaqkfjjqnyuh7p&rid=200w.webp&ct=g">
+</body>
+
+</html>
+
+<script>
+    // Promise
+
+    // 1. Pending State
+    // 2. Completed
+    // 3. Rejected
+
+    // Time
+
+    // Promise() //function
+
+    // new Promise() //constructor function
+
+    // resolve and reject
+    // let p = new Promise(function (resolve, reject) {
+
+    // });
+    // console.log("p:", p);
+
+    // -----------------------------------------------------
+
+    // WE session 1
+
+    // when content load after some time we remove the image
+    // we show a new image
+
+    var image = document.querySelector("#loading_img");
+
+    function checkContent() {
+        // checking content logic
+
+        return false;
+    }
+
+    let content_promise = new Promise(function (resolve, reject) {
+
+        // If content is loaded, resolve
+        // If content is not loaded, reject
+
+
+        let content = checkContent();
+
+        setTimeout(function(){
+            if (content) {
+    
+                // Promise is resolved
+    
+                resolve("content is Loaded");
+    
+            }
+            else {
+    
+                // Promise is rejected
+    
+                reject("Content failed to load");
+    
+            }
+        },3000);
+
+
+    });
+
+    console.log("content_promise:", content_promise);
+
+    // it is time to grab the promise value
+    // how - .then and .catch
+
+    // .then - grab resolved value
+    // .catch -  grab rejected value
+    content_promise.then(function (value) {
+        image.src = "https://media0.giphy.com/media/Q81NcsY6YxK7jxnr4v/200w.webp?cid=ecf05e47du9rfrb5n1wqylpwka83yq4zksqob66dao6h9zsx&rid=200w.webp&ct=g"
+    });
+
+    content_promise.catch(function (err) {
+        image.src = "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fmir-s3-cdn-cf.behance.net%2Fproject_modules%2Fdisp%2F3c6de320601695.562ee09238dde.gif&f=1&nofb=1"
+    });
+    
+
+</script>
