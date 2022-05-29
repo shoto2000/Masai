@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            background-color: black;
+            color: white;
+        }
+        #container>div{
+            display: flex;
+            justify-content: space-evenly;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container"></div>
+</body>
+
+</html>
+<script>
+    // console.log(a.Poster);
+
+    let container = document.querySelector("#container");
+    let a = JSON.parse(localStorage.getItem("set"));
+    let div = document.createElement("div");
+
+    let div2 = document.createElement("div");
+
+    let img = document.createElement("img");
+    img.src = a.Poster;
+
+    let h3 = document.createElement("h3");
+    h3.innerText = a.Title;
+
+    let p1 = document.createElement("p");
+    p1.innerText = a.Type;
+
+    let p2 = document.createElement("p");
+    p2.innerText = a.Year;
+
+    let p3 = document.createElement("p");
+    p3.innerText = a.imdbID;
+
+    div2.append(h3, p1, p2, p3);
+    div.append(img, div2);
+    container.append(div);
+</script>

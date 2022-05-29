@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            text-align: center;
+            background-color: black;
+            color: white;
+        }
+        input,button{
+            height: 30px;
+            border-radius: 5px;
+            border: 2px solid black;
+            margin-bottom: 20px;
+        }
+        input{
+            text-align: left;
+            border-color: white;
+        }
+        button{
+            border: 2px solid red;
+            background-color: transparent;
+            color: red;
+        }
+        button:hover{
+            color: white;
+            background-color: red;
+        }
+
+        #container{
+            display: grid;
+            grid-template-columns: repeat(5,1fr);
+            gap: 30px;
+        }
+        #container>div{
+            box-shadow: rgba(255, 255, 255, 0.24) 0px 3px 8px;
+            border-radius: 15px;
+        }
+        #container>div>img{
+            width: 100%;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+        }
+        #movies{
+            margin: auto;
+            max-height: 350px;
+            width: 400px;
+            border: solid 1px black;
+            border-top: none;
+            overflow: scroll;
+        }
+        #movies>div{
+            display: flex;
+            text-align: center;
+            height: 100px;
+            justify-content: space-between;
+        }
+        #movies>div>img{
+            width: 100px;
+        }
+        #movies::-webkit-scrollbar {
+            visibility: hidden;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" oninput="debounceFunction(main,1000)" id="query"/>
+    <button onclick="oneFun()" id="btn">Submit</button>
+
+    <div id="movies"></div>
+    <div id="container"></div>
+</body>
+</html>
+
+<script>
+
+    // accept the data
+
+    // fetch the data
+    // append data
+    let movies_div = document.querySelector("#movies");
+
+    let id;
+    
+    async function searchMovies(q){
+        // prepare url
+
+        try{
+            let url =`http://www.omdbapi.com/?s=${q}&apikey=18cbb47b`;
+    
+            let res = await fetch(url);
+    
+            let data = await res.json();            
+
+            return data.Search;
+            } catch(error){
+            console.log("error:",error);
+        }
+
+
+        // console.log(data)
+    }
+
+    async function main(){
+        let query = document.querySelector("#query").value;
+        // console.log("query",query);
+
+        let response = searchMovies(query); // who is returning a promise
+
+        let data = await response ;
+
+        appendMovies(data);
+        // console.log("data:", data);
+
+    }
+
+    function appendMovies(movies){
+        if(movies===undefined){
+            return false;
+        }
+        movies_div.innerHTML = null;
+        movies.forEach(function(el){
+
+            var box = document.createElement("div");
+            box.addEventListener("click",function(){
+                open(el)
+            });
+
+            var box2 = document.createElement("div");
+
+            let p = document.createElement("p")
+            p.innerText = el.Title;
+
+            let p2 = document.createElement("p");
+            p2.innerText = el.Year;
+
+            let p3 = document.createElement("p");
+            p3.innerText = el.Type;
+
+            let img = document.createElement("img");
+            img.src = el.Poster;
+
+            box2.append(p2,p3)
+
+            box.append(img,p,box2);
+
+            movies_div.append(box);
+
+        })
+    }
+
+    function debounceFunction(func,delay){
+        if(id){
+            clearTimeout(id);
+        }
+        setTimeout(function(){
+
+            func();
+
+        },delay)
+    }
+
+    function open(el){
+        let a = el;
+        localStorage.setItem("set",JSON.stringify(a));
+        window.location.href = "new.html"
+    }
+</script>
+<script src="main.js"></script>
