@@ -1,0 +1,60 @@
+*{
+    margin: 0;
+    padding: 0;
+  }
+  #navbar{
+    background-color: black;
+    color: white;
+    height: 50px;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    padding: 0px 50px;
+    margin-bottom: 20px;
+  }
+  #navbar>div{
+    display: flex;
+    /* flex-direction: row-reverse; */
+  }
+  #navbar>div h3{
+    min-width: 100px;
+  }
+  a{
+    text-decoration: none;
+    color: gray;
+  }
+  #coffee_count{
+    color: gold;
+  }
+
+  #menu{
+    margin: auto;
+    width: 95%;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap:20px;
+    text-align: center;
+  }
+  #menu>div{
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 20px;
+  }
+  #menu img{
+    width: 100%;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+  }
+  #menu button{
+    border: 2px solid teal;
+    background-color: transparent;
+    color: teal;
+    padding: 5px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+
+  #menu button:hover{
+    color: white;
+    background-color: teal;
+  }
+

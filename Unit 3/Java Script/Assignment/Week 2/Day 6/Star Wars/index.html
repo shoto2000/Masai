@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="container">
+        <input type="text" oninput="debouncing(main,1000)" id="query">
+        <div id="result"></div>
+    </div>
+</body>
+</html>
+
+<script>
+    let id;
+
+    async function getData(){
+        let query = document.querySelector("#query").value;
+
+        let url = `https://swapi.dev/api/people/?search=${query}`;
+
+        let res = await fetch(url)
+
+        let data = await res.json();
+
+        console.log(data);
+        // append(data.results);
+
+        return data.results;
+    }
+
+
+    function append(data){
+        let container = document.querySelector("#result");
+        container.innerHTML = null;
+        data.forEach(function(el){
+            let p = document.createElement("p");
+            p.innerText = el.name
+
+            container.append(p);
+        })
+    }
+
+    async function main(){
+        let data =  await getData();
+
+        append(data);
+    }
+
+    function debouncing(func,delay){
+        if(id){
+            clearTimeout(id);
+        }
+        id = setTimeout(function(){
+            func()
+        },delay);
+    }
+</script>
