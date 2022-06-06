@@ -1,0 +1,50 @@
+*{
+    margin: 0;
+    padding: 0;
+  }
+  #navbar{
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 30px;
+    margin: auto;
+    margin-bottom: 20px;
+    background-color: black;
+    height: 50px;
+    color: white;
+    align-items: center;
+  }
+  a{
+    text-decoration: underline;
+    color: rgb(223, 223, 223);
+    
+  }
+
+  form{
+    width: 25%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+  form>h2{
+    margin-bottom: 20px;
+  }
+  form>input{
+    width: 90%;
+    margin: auto;
+    margin-bottom: 20px;
+    height: 30px;
+    border-radius: 5px;
+    border: 1px solid gray;
+    padding: 5px 10px;
+  }
+  form>input:nth-child(6){
+    width: 40%;
+    border: 2px solid teal;
+    background-color: transparent;
+    color: teal;
+  }
+  form>input:nth-child(6):hover{
+    color: white;
+    background-color: teal;
+  }

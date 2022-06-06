@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+    // LLD - Low Level Design
+    // Hign Level Design
+    
+    // Road:- Head of Village(LLD)
+    // NH:- Nititin Gatkari (HLD)
+
+    // Parking System
+
+    class Vehicle{
+        constructor(type,regno,color){
+            this._type = type;
+            this.regno = regno;
+            this.color = color;
+        }
+
+        get type(){
+            return this._type;
+        }
+
+        set type(val){
+            this._type = val;
+        }
+    }
+
+    // Car
+
+    class Car extends Vehicle{
+        constructor(regno,color){
+            super("Car",regno,color);
+
+        }
+    }
+
+    // Bike 
+
+    class Bike extends Vehicle{
+        constructor(regno,color){
+            super("Bike",regno,color);
+
+        }
+    }
+
+    // Truck
+
+    class Truck extends Vehicle{
+        constructor(regno,color){
+            super("Truck",regno,color);
+
+        }
+    }
+
+    // Parking spots
+
+    class Slot{
+        constructor(type,number){
+            this.number = number;
+            this.type = type;
+            this._isBooked = false;
+        }
+
+        get isBooked(){
+            return this._isBooked;
+        }
+
+        set isBooked(val){
+            this._isBooked = val;
+        }
+    }
+
+    // Individual Floor
+
+    class ParkingFloor{
+        constructor(floorNo,maxSpots){
+            this.floorNo = floorNo;
+            this._parkingSpots = [];
+
+            for(let i=0;i<maxSpots;i++){
+                if(i==0){
+                    // push the slots
+                    this._parkingSpots.push(new Slot("Car",i))
+                }
+                else if(i==1){
+                    // Push the slots
+                    this._parkingSpots.push(new Slot("Bike",i))
+                }
+                else{
+                    // push the slots
+                    this._parkingSpots.push(new Slot("Truck",i))
+                }
+            }
+        }
+
+        get parkingSpots(){
+            return this._parkingSpots;
+        }
+
+        set parkingSpots(val){
+            this._parkingSpots = val;
+        }
+    }
+
+    // Parking Lot of the Building
+
+    class ParkingLot{
+        constructor(number){
+            this._floors = [];
+            this._numberOfFloors = number;
+
+            for(let i=0;i<number;i++){
+                this._floors.push(new ParkingFloor(i,3));
+            }
+        }
+
+        get numberOfFloors(){
+            return this._numberOfFloors;
+        }
+
+        get floors(){
+            return this._floors;
+        }
+
+        parkVehicle(vehicle){
+            let slot = this.findSlot(vehicle.type);
+            if(slot){
+                this.bookSlot(slot);
+                let ticket = new Ticket(slot.floorNumber,slot.slot.number);
+                console.log("Ticket:",ticket);
+            }
+            else{
+                console.log("No slot");
+                return false;
+            }
+        }
+
+        findSlot(type){
+            for(let i=0;i<this._numberOfFloors;i++){
+                for(let slot of this._floors[i]._parkingSpots){
+                    if(slot.type === type && slot.isBooked == false){
+                        return {floorNumber:i, slot: slot}
+                    }
+                }
+            }
+
+            return false;
+        }
+
+        bookSlot(slot){
+            slot.slot.isBooked = true;
+            console.log("Slot is Booked")
+        }
+    }
+
+    // Ticket
+
+    class Ticket{
+        constructor(floorNumber,slotNumber){
+            this.floorNumber = floorNumber;
+            this.slotNumber = slotNumber;
+            this.issueAt = new Date();
+        }
+    }
+
+    let b1 = new Bike("Hp511808","Red");
+
+    let pl1 = new ParkingLot(3);
+    console.log(pl1)
+
+    pl1.parkVehicle(b1);
+</script>
+

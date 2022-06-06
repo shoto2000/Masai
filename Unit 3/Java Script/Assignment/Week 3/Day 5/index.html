@@ -1,0 +1,164 @@
+<!DOCcategory html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+    class Person{
+         constructor(age,gender,category){
+             this.age = age;
+             this.gender = gender;
+             this._category = category;
+         }
+
+         get Category(){
+             return this._category;
+         }
+
+         set Category(val){
+             this._category = val;
+         }
+    }
+
+    class VVIP extends Person{
+        constructor(age,gender){
+            super(age,gender,"VVIP")
+        }
+    }
+
+    class VIP extends Person{
+        constructor(age,gender){
+            super(age,gender,"VIP")
+        }
+    }
+
+    class General extends Person{
+        constructor(age,gender){
+            super(age,gender,"General")
+        }
+    }
+
+
+
+    // Seats
+
+    class Seat{
+        constructor(category,number){
+            this.category = category;
+            this.number = number;
+            this._isBooked = false;
+        }
+
+        get isBooked(){
+            return this._isBooked;
+        }
+
+        set isBooked(val){
+            this._isBooked = val;
+        }
+    }
+
+    class Floor{
+        constructor(floorNo,maxFloor){
+            this.floorNo = floorNo;
+            this._seats = [];
+
+            for(let i=0;i<maxFloor;i++){
+                if(i==0){
+                    this._seats.push(new Seat("VVIP",i));
+                }
+                else if(i==1){
+                    this._seats.push(new Seat("VIP",i));
+                }
+                else{
+                    this._seats.push(new Seat("General",i));
+                }
+            }
+        }
+
+        get seats(){
+            return this._seats;
+        }
+
+        set seats(val){
+            this._seats = val;
+        }
+
+    }
+
+    class Stadium{
+        constructor(number){
+            this._floors = [];
+            this._numberOfFloors = number;
+
+            for(let i=0;i<number;i++){
+                this._floors.push(new Floor(i,10));
+            }
+        }
+
+        get numberOfFloors(){
+            return this._numberOfFloors;
+        }
+
+        get floors(){
+            return this._floors;
+        }
+
+
+        sitSeat(person){
+            let seat = this.findSeat(person.category);
+            if(seat){
+                this.bookSlot(seat);
+                let ticket = new Ticket(seat.floor,seat.seat.number);
+                console.log("Ticket:",ticket);
+            }
+            else{
+                console.log("No seat");
+                return false;
+            }
+        }
+
+        findSeat(category){
+            for(let i=0;i<this._numberOfFloors;i++){
+                for(let seat of this._floors[i]._seats){
+                    if(seat.category === category && seat.isBooked == false){
+                        return {floorNumber:i, seat: seat}
+                    }
+                }
+            }
+
+            return false;
+        }
+
+        bookSeat(seat){
+            seat.seat.isBooked = true;
+            console.log("Seat is Booked")
+        }
+    }
+
+    // Ticket
+
+    class Ticket{
+        constructor(floorNumber,seatNumber){
+            this.floorNumber = floorNumber;
+            this.seatNumber = seatNumber;
+            this.issueAt = new Date();
+        }
+    }
+
+    let p1 = new General(22,"male");
+
+    let s1 = new Stadium(10);
+
+    console.log(s1);
+
+    s1.sitSeat(p1);
+</script>

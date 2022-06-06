@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+    // to understand the syntax of classes
+
+    // class person {
+    //     constructor(n,a){
+    //         this.name = n;
+    //         this.age = a;
+    //     }
+
+    //     printName(){
+    //         console.log(this.name,this.age);
+    //     }
+    // }
+
+    // let per1 = new person("Tayyab",22);
+    // console.log(per1);
+    // per1.printName();
+
+    // // 1. Functional Programming
+    // // let str = "Pizza";
+
+    // function pizza(){
+    //     return "Pizza";
+    // }
+
+    // let str = pizza();
+
+    // // 2. Object oriented Programming
+
+    // let recepie = {
+    //     items:["Butter","Paneer"],
+    //     cook: function(){
+    //         console.log(`cooking ${this.items[0]} ${this.items[1]}`);
+    //     }
+    // }
+
+    // recepie.cook();
+
+    // CLASS :-
+
+    // WE problem:-
+
+    // class Stack{
+    //     constructor(){
+    //         this.length = 0;
+    //         this.stack = [];
+    //     }
+
+    //     push(el){
+    //         this.stack[this.length] = el;
+    //         this.length++;
+    //     }
+
+    //     pop(){
+    //         if(this.length == 0){
+    //             console.log("Empty Stack");
+    //         }
+    //         else{
+    //             this.length--;
+    //             this.stack.pop();
+    //         }
+    //     }
+
+    //     peek(){
+    //         if(this.length == 0){
+    //             console.log("Empty Stack")
+    //         }
+    //         else{
+    //             return this.stack[this.length - 1];
+    //         }
+    //     }
+    // }
+
+    // let s1 = new Stack();
+
+    // s1.push(1);
+    // s1.push(2);
+    
+    // console.log(s1);
+    // console.log(s1.peek());
+    
+
+    // INHERITANCE
+
+    // Object.create(), prototype inheritance
+
+    class Mobile{   // Blueprint
+        constructor(b,bt){
+            this.brand = b;
+            this.calling = true;
+            this.battery = bt;
+            //  if we have 200 properties common
+        }
+    }
+    
+    let m1 = new Mobile("Oneplus",4000)
+    console.log(m1)
+    
+    class SmartPhone extends Mobile{
+        constructor(b,bt,c,s){
+            super(b,bt);
+            this.camera = c;
+            this.screenSize = s;
+        }
+    }
+
+    let m2 = new SmartPhone("Iphone",3000,"20px","6.4inch");
+    console.log(m2)
+</script>

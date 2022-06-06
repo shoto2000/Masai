@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OOPS</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+    // Object Oriented Programming
+
+    // Object 
+
+    // three ways to create objects
+
+    // 1. let obj = {} //object literal
+    // 2. Object.create()
+    // 3. Constructor Function
+    // 4. Classes
+
+    // Create a login/signup system
+
+    // User
+    // Admin
+    // Author
+
+    // Functionalities
+    // 1. user can signup
+    // 2. user can login
+
+    // 3. Encapsulation - making private variables or methods that are used only inside the class
+
+    class User{
+        constructor(name){
+            this.name = name;
+        }
+
+        signUp(username,password){
+            let isvalidated = false;
+            // when user inputs valid username and password
+            isValidated = this.#validateUsername(username) && this.
+            #validatePassword(password);
+
+            if(isValidated){
+                this.username = username;
+                this.password;
+
+                console.log("user signedup successfully");
+            }
+            else{
+                console.log("signup failure");
+            }
+
+            // isValidated = true && false
+        }
+
+        #validateUsername(username){
+            // validating username through if else
+            // by default, we are simulating all usernames are correct.
+            return true;
+        }
+
+        
+        #validatePassword(password){
+            // Validation Password through if else
+            // by default, we are simulating all the passwords are correct.
+            return true;
+        }
+    }
+
+    let u1 = new User("Pablo");
+    // clicked on button
+
+    // u1.signup()
+
+    // will user need u1.validateUsername();
+
+    console.log(u1);
+
+    u1.#validateUsername();
+</script>

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/7645ed552a.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <title>Document</title>
+    <style>
+        *{
+            background-color: rgb(22, 22, 22);
+        }
+        
+        #navbar {
+            display: flex;
+            justify-content: space-between;
+            height: 50px;
+            align-items: center;
+        }
+        
+        #one {
+            display: flex;
+            align-items: center;
+            width: 15%;
+            justify-content: space-around;
+        }
+        
+        #two {
+            display: flex;
+            align-items: center;
+            width: 40%;
+            justify-content: center;
+        }
+        
+        #two>input {
+            width: 80%;
+            height: 35px;
+            border: 1px solid black;
+            padding: 2px 5px;
+            color: white;
+        }
+        #two>button{
+            padding: 5px 15px;
+            border: none;
+        }
+        
+        #three {
+            display: flex;
+            align-items: center;
+            width: 15%;
+            justify-content: space-around;
+        }
+        
+        #one>img {
+            height: 50px;
+        }
+        span{
+            color: white;
+        }
+        #results {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            color: white;
+            width: 90%;
+            margin: auto;
+            
+        }
+        hr{
+            margin-bottom: 20px;
+        }
+        #results img{
+            width: 100%;
+        }
+        </style>
+</head>
+
+<body>
+    <div id="navbar">
+        <div id="one">
+            <span class="material-symbols-outlined">
+                menu
+            </span>
+            <img
+            src="https://www.gstatic.com/youtube/img/promos/growth/8aa0bd3a3a7f0d8e378c962bf1301d18d15040a04849e3b0673dd180a42d9c9f_244x112.webp">
+        </div>
+        <div id="two">
+            <input type="text" id="query" placeholder="Search">
+            <button onclick="search()"><span class="material-symbols-outlined">
+                    search
+                </span></button>
+        </div>
+
+        <div id="three">
+            <span class="material-symbols-outlined">
+                videocam
+            </span>
+            <span class="material-symbols-outlined">
+                grid_on
+            </span>
+            <span class="material-symbols-outlined">
+                notifications
+            </span>
+        </div>
+    </div>
+    <hr>
+
+    <div id="results"></div>
+    <i class="fa-light fa-video-plus"></i>
+</body>
+
+</html>
+
+<script>
+    const api_key = "AIzaSyAnbUvXYp0QQ1EDT2RnI7IT9WgI1ef-azk";
+
+    // youtube :-
+    // Url
+    // fetch()
+
+    // https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=20&q=thor&key=[YOUR_API_KEY
+
+
+    let search = async () => {
+        try {
+            let query = document.getElementById("query").value;
+            let url = `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=20&q=${query}&key=${api_key}`
+
+            let res = await fetch(url)
+
+            let data = await res.json();
+
+            append(data.items);
+
+            console.log(data.items);
+        } catch (err) {
+            console.log(err);
+        }
+    }
+
+    let append = (data) => {
+        let container = document.querySelector("#results");
+        container.innerHTML = null;
+        data.forEach(({ id: { videoId }, snippet: { title, thumbnails } }) => {
+            let div = document.createElement("div");
+
+            let img = document.createElement("img");
+            img.src = thumbnails.default.url;
+
+            // let iframe = document.createElement("iframe")
+            // iframe.src = `https://www.youtube.com/embed/${videoId}`;
+            // iframe.allow = "fullscreen";
+
+            let h3 = document.createElement("h3");
+            h3.innerText = title;
+
+            div.append(img, h3);
+            let video = {
+                title,
+                videoId
+            }
+            div.onclick = () => {
+                playVideo(video);
+            }
+
+            container.append(div);
+
+        })
+    }
+
+    let playVideo = (video) => {
+        localStorage.setItem("video", JSON.stringify(video));
+
+        window.location.href = "video.html";
+
+
+
+    }
+
+    // <iframe width="560" height="315" src="https://www.youtube.com/embed/H5v3kku4y6Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</script>

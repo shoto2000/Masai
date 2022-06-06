@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+
+<script>
+    // function test(){
+    //     console.log("Hello World");
+    // }
+
+    // let test = function(){
+    //     console.log("Hello World");
+    // }
+
+    // // ES6
+    //  test = () =>{
+    //     console.log("Hello World");
+    // }
+
+    // let arr = [1,2,3,4]
+    // arr.forEach((el) =>{
+    //     console.log(el)
+    // });
+
+    // var myObj = {
+    //     i:0,
+    //     b: () => console.log(this.i),
+    //     c: function(){
+    //         console.log(this.i);
+    //     }
+    // }
+
+    // myObj.b();
+
+    // let arr = [1,2,3,4];
+
+    // for(let x of arr){
+    //     console.log(x);
+    // }
+
+
+
+    // const user = {
+    //     name: "raj",
+    //     age: 24,
+    //     city: "Pune"
+    // }
+
+    // let name = user.name;
+
+    // let age = user.age;
+
+    // Destructuring
+
+    // let {name,city,x} = user;
+    // console.log(name,city,x);
+
+    // fetch("https://reqres.in/api/users?page=2")
+    // .then((res)=>{
+    //     return res.json().then((res)=>{
+    //         let data = res.data;
+
+    //         let { first_name } = data;
+    //         console.log(first_name);
+    //         console.log(data);
+    //     })
+    // })
+
+    // let {name:anything,city} = user;
+    // console.log(anything)
+
+    // let user = {
+    //     name: "raj",
+    //     age: 24,
+    //     city: "Pune"
+    // }
+
+    // function printUser({name,age,city}){
+    //     console.log(name,age,city)
+    // }
+
+    // printUser(user);
+
+    // let colors1 = ["red", "yellow", "blue"];
+
+    // let colors2 = [...colors1, "violet", "orange", "green"];
+
+    // console.log(colors2)
+
+    // spread user
+
+    // const user1 = {
+    //     name: "Tayyab"
+    // }
+
+    // const city2 = {
+    //     city: "pune"
+    // }
+
+    // const details = { ...user1, ...city2 };
+    // console.log(details);
+
+    // const user = {
+    //     name:"Tayyab",
+    //     city:"Pune",
+    //     age:22,
+    //     role:"developer"
+    // }
+
+    // const {name, ...x} = user
+    // console.log(x)
+    // console.log(name);
+
+    let arr = [1,2,3,4];
+
+    function printArr(...a){
+        console.log(a)
+        let sum = 0;
+        
+        for(let num of a){
+            sum+=num;
+        }
+        console.log(sum);
+    }
+    
+    printArr(10,20,30);
+</script>

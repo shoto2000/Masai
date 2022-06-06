@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+    class Person{
+        constructor(n,a) {
+            this.name = n;
+            this.age = a;
+            // this.showName = () =>{
+            //     console.log(this.name);
+            // }
+        }
+
+        showName(){
+            console.log(this.name);
+        }
+    }
+
+    let per1 = new Person("Tayyab",22);
+    console.log(per1);
+    console.log(per1.showName());
+</script>
